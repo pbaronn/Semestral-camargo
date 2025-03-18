@@ -1,0 +1,106 @@
+/* Remove margens, preenchimentos e define fonte padrão */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Define o layout principal com duas colunas */
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+/* Configuração da seção esquerda (logo e nome da academia) */
+.left {
+    width: 50%;
+    background: #E0E0E0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Configuração do tamanho da logo */
+.logo {
+    width: 300px;
+    margin-bottom: 5px;
+}
+
+/* Estilização do nome da academia */
+.force-gym {
+    font-size: 50px;
+    color: black;
+    font-weight: bold;
+    margin-top: -70px;
+    
+}
+
+/* Configuração da seção direita (formulário de login) */
+.right {
+    width: 50%;
+    background: #5B5FA6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Estilização da caixa de login */
+.login-box {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+/* Título "Login" com cor branca */
+.login-title {
+    color: white;
+    margin-bottom: 20px;
+}
+
+/* Estilização dos campos de entrada */
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+/* Botão de login */
+.btn-entrar {
+    background: white;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: white;
+    background-color: transparent;
+    border: 2px solid white;
+}
+
+/* Efeito ao passar o mouse no botão */
+.btn-entrar:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Ícone ao lado do botão "Entrar" */
+.icon {
+    width: 16px;
+    height: 16px;
+}
+
+/* Estilização do link "Esqueci minha senha" */
+a {
+    display: block;
+    margin-top: 10px;
+    color: white;
+    text-decoration: none;
+}
