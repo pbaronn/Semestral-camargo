@@ -4,102 +4,112 @@ body {
     margin: 0;
     padding: 0;
     display: flex;
+    height: 100vh; /* Garante que a página ocupe toda a altura da tela */
+    overflow: hidden;
 }
 
-/* Ajustando a barra lateral */
-.sidebar {
-    width: 150px; /* Diminuída */
-    background: #333;
-    color: white;
-    padding: 15px;
-    height: 100vh;
+.barralteral {
+    width: 180px; /* largura */
+    background: #333; /* cor de largura */
+    padding: 15px; /*para borda */
+    height: 100vh; /* barra lateral ocupa toda a altura da tela */
+    display: flex;
+    flex-direction: column;
 }
 
-.sidebar img.logo {
-    width: 100%;
-}
-
-/* Ajuste nos itens do menu lateral */
-.sidebar ul {
+/* itens do menu lateral */
+.barralteral ul {
     list-style: none;
     padding: 0;
+    flex-grow: 1;
 }
 
-.sidebar ul li {
+.barralteral ul li {
     margin: 15px 0;
 }
 
-.sidebar ul li a {
-    color: white;
+.barralteral ul li a {
+    color: black; 
     text-decoration: none;
     display: flex;
     align-items: center;
+    font-weight: bold;
 }
 
-.sidebar ul li a img {
-    width: 18px;
+.barralteral ul li a img {
+    width: 50px; 
+    height: 50px;
     margin-right: 8px;
 }
 
-/* Área principal */
-.main-content {
+.principal {
     flex: 1;
-    padding: 20px;
+    padding: 50px;
+    margin-left: -40px; /* Reduzi para aproximar do menu */
+   
 }
 
-/* Cabeçalho com fundo preenchido */
+/* Cabeçalho */
 header {
     display: flex;
-    justify-content: space-between;
+    padding: 30px;
     align-items: center;
     background: #f4f4f4;
-    padding: 30px;
-    border-radius: 8px; /* Bordas arredondadas */
-    
+     width: calc(100% - 200px);
+    position: fixed;
+    top: 0;
+    left: 210px;
+    right: 0;
+    z-index: 10;
+    height: 30px;
+    box-sizing: border-box;
 }
-
-/* Centralizando barra de pesquisa */
-.search-container {
+/* Centraliza barra de pesquisa */
+.barrapesquisa {
     display: flex;
     align-items: center;
-    flex: 10;
     justify-content: center;
+    flex-grow: 1;
 }
 
-.search-bar {
+.barra-pesquisa {
     padding: 8px;
-    width: 250px;
-    border-radius: 6px; /* Bordas arredondadas */
+    width: 300px;
+    border-radius: 60px;
     border: 1px solid #ccc;
+    text-align: center; /* Centraliza o texto na barra */
 }
 
 /* Ícone de busca */
-.search-icon {
+.pesquisa-icon {
     width: 22px;
-    margin: left  2px;
+    margin-left: -30px;
 }
 
 /* Informações do usuário */
-.user-info {
+.usuario-info {
     display: flex;
     align-items: center;
+    white-space: nowrap;
 }
 
-.user-info img {
-    width: 30px;
+.usuario-info img {
+    width: 20px;
     margin-left: 10px;
 }
 
+
 /* Botão Novo */
 .btn-novo {
-    background: #008cba;
-    color: white;
+    color: rgb(0, 0, 0);
     border: none;
     padding: 12px;
     cursor: pointer;
     display: flex;
     align-items: center;
-    border-radius: 6px; /* Bordas arredondadas */
+    border-radius: 6px;
+    margin-left: 2px; /*evita sobreposição */
+    z-index: 5;
 }
 
 .btn-novo img {
@@ -107,7 +117,7 @@ header {
     margin-right: 5px;
 }
 
-/* Estilização da tabela */
+/* tabela */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -116,25 +126,24 @@ table {
 
 table, th, td {
     border: 1px solid #ccc;
-    border-radius: 6px; /* Bordas arredondadas */
 }
 
 /* Ajuste das células da tabela */
 th, td {
-    padding: 12px
-    text-align left;
+    padding: 12px;
+    text-align: left;
 }
 
 /* Botão Editar */
 .btn-editar {
-    background: #ffffff; 
-    color: rgb(0, 0, 0);
+    background: #ffffff;
+    color: black;
     border: none;
     padding: 8px;
     cursor: pointer;
     display: flex;
     align-items: center;
-    border-radius: 6px; /* Bordas arredondadas */
+    border-radius: 6px;
 }
 
 .btn-editar img {
