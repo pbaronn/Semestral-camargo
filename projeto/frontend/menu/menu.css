@@ -122,7 +122,7 @@ table, th, td {
 /* Ajuste das células da tabela */
 th, td {
     padding: 12px
-    text-align: left;
+    text-align left;
 }
 
 /* Botão Editar */
@@ -138,6 +138,6 @@ th, td {
 }
 
 .btn-editar img {
-    width: 30px;x;
+    width: 30px;
     margin-right: 5px;
 }
