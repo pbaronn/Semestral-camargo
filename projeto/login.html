@@ -3,42 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - Force Gym</title>
-    <link rel="stylesheet" href="login.css"> <!-- Importa o arquivo de estilos CSS -->
-    <script defer src="script.js"></script> <!-- Importa o arquivo JavaScript -->
+    <title>Menu</title>
+    <link rel="stylesheet" href="menu.css">
+    <script defer src="menu.js"></script>
 </head>
 <body>
-    <div class="container"> <!-- Container principal -->
-        <div class="left"> <!-- Seção esquerda com logo e nome da academia -->
-            <img src="img/logo.png" alt="Force Gym Logo" class="logo"> <!-- Logo da academia -->
-            <h1 class="force-gym">Force Gym</h1> <!-- Nome da academia -->
-        </div>
-        <div class="right"> <!-- Seção direita com o formulário de login -->
-            <div class="login-box"> <!-- Caixa de login -->
-                <h2 class="login-title">Login</h2> <!-- Título "Login" -->
-                <input type="text" id="usuario" placeholder="Usuário"> <!-- Campo de entrada para usuário -->
-                <input type="password" id="senha" placeholder="Senha"> <!-- Campo de entrada para senha -->
-                <button onclick="logar()" class="btn-entrar"> <!-- Botão de login -->
-                    <img src="img/sair.png" alt="Ícone de login" class="icon"> Entrar <!-- Ícone + texto -->
-                </button>
-                <a href="#">Esqueci minha senha</a> <!-- Link para recuperação de senha -->
+    <div class="barralteral">
+        <nav>
+            <ul>
+                <li><a href="#" class="lateral"><img src="imgm/casa.png" alt="Início"> Início</a></li>
+                <li><a href="#"><img src="imgm/eng.png" alt="Configurações"> Configurações</a></li>
+                <li><a href="#"><img src="imgm/sair.png" alt="Sair"> Sair</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="principal">
+        <header>
+            <div class="barrapesquisa">
+                <input type="text" placeholder="Busque aqui" class="barra-pesquisa">
+                <img src="imgm/lupa.png" alt="Buscar" class="pesquisa-icon">
             </div>
-        </div>
+            <div class="usuario-info">
+                <img src="imgm/person.png" alt="Usuário">
+                <span>Seja bem-vinda, Fulano</span>
+            </div>
+        </header>
+        <section class="menu">
+            <h2>Menu</h2>
+            <button class="btn-novo"><img src="imgm/person.png" alt="Novo"> Novo</button>
+            <table>
+                <tr>
+                    <td><button class="btn-editar"><img src="imgm/lapis.png" alt="Editar"> Editar</button></td>
+                    <td>Nome Completo</td>
+                    <td><img src="imgm/alert.png" alt="alerta"></td>
+                </tr>
+                <tr>
+                    <td><button class="btn-editar"><img src="imgm/lapis.png" alt="Editar"> Editar</button></td>
+                    <td>Nome Completo</td>
+                    <td><img src="imgm/ok.png" alt="ok"></td>
+                </tr>
+                <tr>
+                    <td><button class="btn-editar"><img src="imgm/lapis.png" alt="Editar"> Editar</button></td>
+                    <td>Nome Completo</td>
+                    <td><img src="imgm/ok.png" alt="ok"></td>
+                </tr>
+                <tr>
+                    <td><button class="btn-editar"><img src="imgm/lapis.png" alt="Editar"> Editar</button></td>
+                    <td>Nome Completo</td>
+                    <td><img src="imgm/alert.png" alt="alerta"></td>
+                </tr>
+            </table>
+        </section>
     </div>
 </body>
-
-
-<script>
-    function logar() {
-        const usuario = document.getElementById('usuario').value; // Obtém o valor do campo usuário
-        const senha = document.getElementById('senha').value; // Obtém o valor do campo senha
-        
-        if (usuario === 'admin' && senha === '1234') { // Verifica se os dados são corretos
-            alert('Login bem-sucedido!'); // Exibe mensagem de sucesso
-        } else {
-            alert('Usuário ou senha incorretos!'); // Exibe mensagem de erro
-        }
-    }
-</script>
-
 </html>
