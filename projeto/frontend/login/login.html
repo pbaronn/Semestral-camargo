@@ -21,7 +21,7 @@
                 <button onclick="logar()" class="btn-entrar"> <!-- Botão de login -->
                     <img src="img/sair.png" alt="Ícone de login" class="icon"> Entrar <!-- Ícone + texto -->
                 </button>
-                <a href="#">Esqueci minha senha</a> <!-- Link para recuperação de senha -->
+                <a href="#">Esqueci minha senha</a> 
             </div>
         </div>
     </div>
@@ -30,15 +30,16 @@
 
 <script>
     function logar() {
-        const usuario = document.getElementById('usuario').value; // Obtém o valor do campo usuário
-        const senha = document.getElementById('senha').value; // Obtém o valor do campo senha
-        
-        if (usuario === 'admin' && senha === '1234') { // Verifica se os dados são corretos
-            alert('Login bem-sucedido!'); // Exibe mensagem de sucesso
-        } else {
-            alert('Usuário ou senha incorretos!'); // Exibe mensagem de erro
-        }
+    const usuario = document.getElementById('usuario').value;
+    const senha = document.getElementById('senha').value;
+
+    if (usuario === 'admin' && senha === '1234') {
+        alert('Seja bem-vindo, Professor Camargo!');
+        window.location.href = "../menu/menu.html"; // entra
+    } else {
+        alert('Usuário ou senha incorretos!');
     }
+}
 </script>
 
 </html>

@@ -13,7 +13,7 @@
             <ul>
                 <li><a href="#" class="lateral"><img src="imgm/casa.png" alt="Início"> Início</a></li>
                 <li><a href="#"><img src="imgm/eng.png" alt="Configurações"> Configurações</a></li>
-                <li><a href="#"><img src="imgm/sair.png" alt="Sair"> Sair</a></li>
+                <li><a href="#" id="logout"><img src="imgm/sair.png" alt="Sair"> Sair</a></li>
             </ul>
         </nav>
     </div>
@@ -25,7 +25,7 @@
             </div>
             <div class="usuario-info">
                 <img src="imgm/person.png" alt="Usuário">
-                <span>Seja bem-vinda, Fulano</span>
+                <span>Seja bem-vindo, Camargo!</span>
             </div>
         </header>
         <section class="menu">
@@ -55,5 +55,14 @@
             </table>
         </section>
     </div>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById("logout").addEventListener("click", function (event) {
+            event.preventDefault(); // Evita erro
+            window.location.href = "../login/login.html"; // volta pro login
+        })
+    })
+</script>
+    
 </body>
 </html>
