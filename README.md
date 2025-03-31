@@ -1,4 +1,8 @@
-                                                Formulário para academia
+#Gestão de Academia 
+
+Link trello: https://www.canva.com/design/DAGgyXjqD1U/lNBsXbhts6EX-J1l92At5A/edit
+
+Formulário para academia
 
 Este projeto consiste em uma aplicação web para academias, permitindo o cadastro de alunos e o controle de informações medicas essenciais. O foco principal é a saúde e segurança dos alunos, garantindo um acompanhamento adequado das condições médicas para definir treinos ideais e prevenir acidentes e lesões.
 
