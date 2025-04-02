@@ -5,18 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menu</title>
     <link rel="stylesheet" href="menu.css">
-    <script defer src="menu.js"></script>
 </head>
+
+
+
 <body>
     <div class="barralteral">
         <nav>
             <ul>
                 <li><a href="#" class="lateral"><img src="imgm/casa.png" alt="Início"> Início</a></li>
-                <li><a href="#"><img src="imgm/eng.png" alt="Configurações"> Configurações</a></li>
+                <li><a href="#" id="configuracao"><img src="imgm/eng.png" alt="Configurações"> Configurações</a></li>
                 <li><a href="#" id="logout"><img src="imgm/sair.png" alt="Sair"> Sair</a></li>
             </ul>
         </nav>
     </div>
+
+
+
+
     <div class="principal">
         <header>
             <div class="barrapesquisa">
@@ -28,9 +34,13 @@
                 <span>Seja bem-vindo, Camargo!</span>
             </div>
         </header>
+
+
+
+
         <section class="menu">
             <h2>Menu</h2>
-            <button class="btn-novo"><img src="imgm/person.png" alt="Novo"> Novo</button>
+            <button class="btn-novo"><img src="imgm/pe.png" alt="Novo"> Novo</button>
             <table>
                 <tr>
                     <td><button class="btn-editar"><img src="imgm/lapis.png" alt="Editar"> Editar</button></td>
@@ -55,6 +65,9 @@
             </table>
         </section>
     </div>
+
+
+
 <script>
     document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("logout").addEventListener("click", function (event) {
@@ -62,6 +75,10 @@
             window.location.href = "../login/login.html"; // volta pro login
         })
     })
+    document.getElementById("configuracao").addEventListener("click", function (event) {
+        event.preventDefault();
+        window.location.href = "../configuracoes/config.html";
+    });
 </script>
     
 </body>

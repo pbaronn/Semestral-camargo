@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esqueci minha senha</title>
+    <link rel="stylesheet" href="recuperarsenha.css">
+</head>
+
+<body>
+    <div class="container">
+        <p>Ensira seu e-mail para recuperação de senha</p>
+        <input type="email" placeholder="E-mail" class="email-input">
+        <li><a href="#" id="enviar"><alt="enviar">enviar</a></li>
+        <li><a href="#" id="voltar"><alt="voltar">voltar</a></li>
+    </div>
+
+    <script>
+        document.getElementById("enviar").addEventListener("click", function (event) {
+        event.preventDefault();
+        window.location.href = "../login/login.html";
+    });
+
+    document.getElementById("voltar").addEventListener("click", function (event) {
+        event.preventDefault();
+        window.location.href = "../login/login.html";
+    });
+
+
+    </script>
+</body>
+</html>
+

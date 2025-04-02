@@ -58,8 +58,6 @@ body {
     margin-top: 30px; /* Para ficar abaixo da header */
     transition: margin-left 0.3s ease-in-out; /* Animação suave ao abrir */
 }
-
-/* Cabeçalho */
 header {
     display: flex;
     padding: 30px;
@@ -107,69 +105,36 @@ header {
     width: 20px;
     margin-left: 10px;
 }
-
-
-/* Botão Novo */
-.btn-novo {
-    color: rgb(0, 0, 0);
-    border: none;
-    padding: 12px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    border-radius: 6px;
-    margin-left: 2px; /*evita sobreposição */
-    z-index: 5;
+.form-container {
+    max-width: 500px;
+    margin: 20px auto;
 }
-
-.btn-novo img {
-    width: 20px;
-    margin-right: 5px;
+label, p {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
 }
-
-/* tabela */
-table {
+input {
     width: 100%;
-    border-collapse: collapse;
-    margin-top: 15px;
+    padding: 5px;
+    margin-top: 5px;
+    border: 1px solid #000;
 }
-
-table, th, td {
-    border: 1px solid #0a0a0a;
+.password-fields {
+    display: none;
 }
-
-/* Ajuste das células da tabela */
-th, td {
-    padding: 12px;
-    text-align: left;
-}
-
-/* Botão Editar */
-.btn-editar {
-    background: #ffffff;
-    color: black;
-    border: none;
-    padding: 8px;
-    cursor: pointer;
+.buttons {
+    margin-top: 10px;
     display: flex;
-    align-items: center;
-    border-radius: 6px;
+    gap: 10px;
 }
-
-.btn-editar img {
-    width: 30px;
-    margin-right: 5px;
+button {
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    background: #000;
+    color: #fff;
 }
-
-nav ul li a {
-    color: white !important; /* Força a cor branca */
-    text-decoration: none;
-}
-
-.usuario-info span {
-    color: white; /* Define a cor branca para "Seja bem-vindo, Camargo!" */
-}
-
-.barralteral:hover ~ .principal {
-    margin-left: 180px; /* Empurra o conteúdo para a direita */
+button.cancel {
+    background: #aaa;
 }

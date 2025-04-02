@@ -15,7 +15,7 @@
 /* Configuração da seção esquerda (logo e nome da academia) */
 .left {
     width: 50%;
-    background: #E0E0E0;
+    background: #000000;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -24,23 +24,14 @@
 
 /* Configuração do tamanho da logo */
 .logo {
-    width: 300px;
+    width: 600px;
     margin-bottom: 5px;
-}
-
-/* Estilização do nome da academia */
-.force-gym {
-    font-size: 50px;
-    color: black;
-    font-weight: bold;
-    margin-top: -70px;
-    
 }
 
 /* Configuração da seção direita (formulário de login) */
 .right {
     width: 50%;
-    background: #5B5FA6;
+    background: #000000;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -48,7 +39,7 @@
 
 /* Estilização da caixa de login */
 .login-box {
-    background: rgba(255, 255, 255, 0.2);
+    
     padding: 20px;
     border-radius: 10px;
     text-align: center;
@@ -71,7 +62,7 @@ input {
 
 /* Botão de login */
 .btn-entrar {
-    background: white;
+    
     border: none;
     padding: 10px;
     width: 100%;
@@ -83,12 +74,12 @@ input {
     gap: 8px;
     color: white;
     background-color: transparent;
-    border: 2px solid white;
+    
 }
 
 /* Efeito ao passar o mouse no botão */
 .btn-entrar:hover {
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(77, 72, 72, 0.2);
 }
 
 /* Ícone ao lado do botão "Entrar" */
@@ -103,4 +94,30 @@ a {
     margin-top: 10px;
     color: white;
     text-decoration: none;
+}
+
+input#usuario, input#senha {
+    background-color: gray;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+input#usuario:hover, input#senha:hover {
+    background-color: rgba(77, 72, 72, 0.8);
+}
+
+input#usuario::placeholder, input#senha::placeholder {
+    color: white;
+    opacity: 0.7;
+}
+
+/* Evita que o preenchimento automático do navegador deixe o fundo branco */
+input#usuario:-webkit-autofill, 
+input#senha:-webkit-autofill {
+    background-color: gray !important;
+    -webkit-box-shadow: 0 0 0 1000px gray inset; /* Força o fundo cinza */
+    box-shadow: 0 0 0 1000px gray inset;
 }
