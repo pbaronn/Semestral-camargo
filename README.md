@@ -1,6 +1,6 @@
 # Gestão de Academia 
 
-Link trello: https://www.canva.com/design/DAGgyXjqD1U/lNBsXbhts6EX-J1l92At5A/edit
+Link trello: (https://trello.com/b/wnmhp1Yn/gestao-de-projeto)
 
 Formulário para academia
 
