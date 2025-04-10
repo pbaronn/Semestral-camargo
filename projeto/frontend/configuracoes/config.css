@@ -138,3 +138,27 @@ button {
 button.cancel {
     background: #aaa;
 }
+
+
+.botoes-final button {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-family: "Instrument Sans", sans-serif;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-salvar {
+    background-color: transparent;
+    color:black;
+    font-weight: bold;
+    
+}
+
+.btn-cancelar {
+    background-color: transparent;
+    color:black;
+    font-weight: bold;
+}

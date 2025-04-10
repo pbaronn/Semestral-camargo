@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Novo Cadastro</title>
+    <link rel="stylesheet" href="novo.css"> <!-- Importa o arquivo de estilos CSS -->
+    <script defer src="script.js"></script> <!-- Importa o arquivo JavaScript -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="barralteral">
+        <nav>
+            <ul>
+                <li><a href="#" id="inicio"><img src="img/casa.png" alt="Início"> Início</a></li>
+                <li><a href="#" id="configuracao"><img src="img/eng.png" alt="Configurações"> Configurações</a></li>
+                <li><a href="#" id="logout"><img src="img/sair.png" alt="Sair"> Sair</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="principal">
+        <header>
+            <div class="barrapesquisa">
+                <input type="search" placeholder="Busque aqui" class="barra-pesquisa">
+                <img src="img/lupa.png" alt="Buscar" class="pesquisa-icon">
+
+                <div class="usuario-info">
+                    <img src="img/person.png" alt="Usuário">
+                    <span>Seja bem-vindo, Camargo!</span>
+                </div>
+            </div>
+        </header>    
+    
+</body>
+
+</html>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Redireciona para 'menu.html' ao clicar em "Início"
+        document.getElementById("inicio").addEventListener("click", function (event) {
+            event.preventDefault();
+            window.location.href = "../menu/menu.html";
+        });
+
+        // Redireciona para 'login.html' ao clicar em "Sair"
+        document.getElementById("logout").addEventListener("click", function (event) {
+            event.preventDefault();
+            window.location.href = "../login/login.html";
+        });
+
+     
+  });
+
+</script>

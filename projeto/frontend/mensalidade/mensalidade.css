@@ -1,4 +1,4 @@
-/* Estilizando a página inteira */
+* Estilizando a página inteira */
 a{
     font-family: "Instrument Sans", sans-serif;    
     color: #FFFFFF;
@@ -30,20 +30,10 @@ body {
     z-index: 999; /* Mantém abaixo da header */
     left: 0;
 }
-
-nav{
-    width: 50%;
-    align-items: center;
-    justify-content: center;
-    display: flex;
-
-}
-
 /* Quando o usuário passa o mouse na lateral da tela, a barra aparece */
 .barralteral:hover {
     left: 0;
 }
-
 
 .barralteral {
     margin-top: 0px;
@@ -52,7 +42,6 @@ nav{
     text-align: center;
     left: -180px; /* Esconde a barra lateral fora da tela */
   }
-
 
 
 .barralteral nav ul {
@@ -64,9 +53,7 @@ nav{
     list-style: none;
     gap: 20px;
   }
-  
-
-.principal {
+  .principal {
     width: 20%;
     padding: 50px;
     margin-left: 0; /* Sem espaço quando a barra lateral está oculta */
@@ -165,84 +152,8 @@ input[type="search"] {
     text-align: center; /* Centraliza o texto na barra */
 }
 
-input[type="text"],
-.texto {
-  border: none;
-  border-bottom: 2px solid #333; /* muda a cor e espessura conforme quiser */
-  outline: none;
-  background-color: transparent;
-  padding: 5px 0;
-}
-
-input[type="text"]:focus,
-.texto {
-  border-bottom: 2px solid black; /* muda a cor ao focar */
-  border-top: 2px solid transparent; /* muda a cor ao focar */
-  border-left: 2px solid transparent; /* muda a cor ao focar */
-  border-right: 2px solid transparent; /* muda a cor ao focar */
-  width: 100vh;
-}
 
 
-.texto {
-    background-color: transparent;
-    border-bottom: 2px solid black; /* muda a cor ao focar */
-  }
-  
-  .formulario {
-    position: relative; /* Use absolute ou fixed */
-    margin-top: 100px;
-    display: flex; /* Alinha no eixo principal (vertical no column) */
-  }
+
   
 
-.checks {
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
-}
-
-
-.checkboxes {
-    display: flex;
-    flex-direction: row;
-    gap: 5px;
-}
-
-  .checks input[type="checkbox"] {
-    margin-left: 0; /* Garante que fiquem colados à esquerda */
-    width: 20px;
-    height: 20px;
-    accent-color: black;
-}
-
-#textocheck{
-    display: none; /* Oculto por padrão */
-    margin-top: 10px;  
-    width: 82vh;
-    
-}
-
-.checkboxes .texto {
-    display: none;
-    margin-top: 5px;
-}
-.botao-final button {
-    padding: 10px 20px;
-    font-size: 16px;
-    font-family: "Instrument Sans", sans-serif;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    margin-top: 30px;
-    display: flex;
-    gap: 10px;
-        
-}
-
-.btn-voltar {
-    background-color: transparent;
-    color:black;
-    font-weight: bold;
-   
-}

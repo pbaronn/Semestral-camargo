@@ -1,3 +1,4 @@
+
 /* Estilizando a página inteira */
 body {
     font-family: Arial, sans-serif;
@@ -5,7 +6,7 @@ body {
     padding: 0;
     display: flex;
     height: 100vh; /* Garante que a página ocupe toda a altura da tela */
-    overflow: hidden;
+    overflow: scroll;
 }
 
 .barralteral {
@@ -21,6 +22,9 @@ body {
     transition: left 0.3s ease-in-out; /* Efeito suave ao aparecer */
     z-index: 999; /* Mantém abaixo da header */
 }
+
+
+
 
 /* Quando o usuário passa o mouse na lateral da tela, a barra aparece */
 .barralteral:hover {
@@ -101,6 +105,8 @@ header {
     display: flex;
     align-items: center;
     white-space: nowrap;
+    position: absolute;
+    right: 10vh;
 }
 
 .usuario-info img {

@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Visualizar Cadastro</title>
-    <link rel="stylesheet" href="vizualizar.css"> <!-- Importa o arquivo de estilos CSS -->
+    <title>Editar Cadastro</title>
+    <link rel="stylesheet" href="editar.css"> <!-- Importa o arquivo de estilos CSS -->
     <script defer src="script.js"></script> <!-- Importa o arquivo JavaScript -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -132,11 +132,15 @@
                     <input type="text" class="texto" id="textocheck" placeholder="Observação">
                 </div>
             </div>
-            <div class="botao-final">
-                <button type="button" class="btn-voltar"  id="voltar">Voltar</button>
+            <div class="botoes-final">
+                <button type="button" class="btn-salvar" onclick="window.location.href='../menu/menu.html'">Salvar</button>
+                <button type="button" class="btn-deletar" onclick="window.location.href='../menu/menu.html'">Apagar Cadastro</button>
+                <button type="button" class="btn-cancelar" onclick="window.location.href='../menu/menu.html'">Cancelar</button>
             </div>
         </form>
     </div>
+
+    
     
 </body>
 
@@ -153,11 +157,6 @@
         document.getElementById("logout").addEventListener("click", function (event) {
             event.preventDefault();
             window.location.href = "../login/login.html";
-        });
-
-        document.getElementById("voltar").addEventListener("click", function (event) {
-            event.preventDefault();
-            window.location.href = "../menu/menu.html";
         });
 
 
