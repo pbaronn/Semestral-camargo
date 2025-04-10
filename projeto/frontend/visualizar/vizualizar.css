@@ -133,6 +133,7 @@ input {
     padding: 5px;
     margin-top: 5px;
     border: 1px solid #000;
+    accent-color: black;
 }
 .password-fields {
     display: none;
