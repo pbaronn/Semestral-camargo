@@ -1,4 +1,4 @@
-* Estilizando a página inteira */
+/* Estilizando a página inteira */
 a{
     font-family: "Instrument Sans", sans-serif;    
     color: #FFFFFF;
@@ -30,6 +30,15 @@ body {
     z-index: 999; /* Mantém abaixo da header */
     left: 0;
 }
+
+nav{
+    width: 50%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+
+}
+
 /* Quando o usuário passa o mouse na lateral da tela, a barra aparece */
 .barralteral:hover {
     left: 0;
@@ -148,12 +157,62 @@ input[type="search"] {
     padding: 8px;
     width: 300px;
     border-radius: 60px;
-    border: 1px solid #ccc;
+    border: 1px solid #000000;
     text-align: center; /* Centraliza o texto na barra */
 }
 
 
 
+.formulario {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    background-color: #000000;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
 
-  
+.formulario input.texto {
+    width: 300px;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 6px;
+    border: 1px solid #000000;
+}
+
+.botoes {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.botoes button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    background-color: #f8f5f5;
+    color: #0a0a0a;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.botoes button:hover {
+    background-color: #494949;
+}
+
+.titulo-lateral {
+    position: absolute;
+    top: 60px; /* logo abaixo da header que tem 50px de altura */
+    left: 30px; /* distância da lateral esquerda, ajustado após a barra lateral */
+    font-size: 10px;
+    font-weight: bold;
+    color: #000;
+    z-index: 5;
+    padding: 10px;
+}
+
 

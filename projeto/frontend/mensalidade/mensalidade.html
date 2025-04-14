@@ -25,16 +25,19 @@
 
     <div class="principal">
         <header>
-            <div class="barrapesquisa">
-                <input type="search" placeholder="Busque aqui" class="barra-pesquisa">
-                <img src="img/lupa.png" alt="Buscar" class="pesquisa-icon">
-
-                <div class="usuario-info">
-                    <img src="img/person.png" alt="Usuário">
-                    <span>Seja bem-vindo, Camargo!</span>
-                </div>
+                
             </div>
         </header>
+    </div>
+
+    <div class="formulario">
+        <form>
+            <input type="text" class="texto" placeholder="Digite o nome"><br><br>
+            <div class="botoes">
+                <button type="button" onclick="window.location.href='../menu/menu.html'">Voltar</button>
+                <button type="button" onclick="window.location.href='../mensalidade2/men.html'">Continuar</button>
+            </div>
+        </form>
     </div>
 
     <script>
@@ -50,54 +53,10 @@
                 event.preventDefault();
                 window.location.href = "../login/login.html";
             });
-    
-    
-            // Alternar visibilidade dos campos de senha ao clicar em "Mudar senha"
-            document.getElementById("toggle-password").addEventListener("click", function () {
-                let passwordFields = document.getElementById("password-fields");
-    
-                // Alterna entre mostrar e esconder
-                if (passwordFields.style.display === "none" || passwordFields.style.display === "") {
-                    passwordFields.style.display = "block";
-                } else {
-                    passwordFields.style.display = "none";
-                }
+            document.getElementById("configuracao").addEventListener("click", function (event) {
+                event.preventDefault();
+                window.location.href = "../configuracoes/config.html";
             });
-    
-            // Oculta os campos ao clicar em "Cancelar"
-            document.getElementById("cancel").addEventListener("click", function () {
-                document.getElementById("password-fields").style.display = "none";
-            });
-        });
-    
-      // Seleciona todas as divs com class "checkboxes"
-      const blocos = document.querySelectorAll('.checkboxes');
-    
-      blocos.forEach(bloco => {
-        const checkSim = bloco.querySelector('#check1');
-        const checkNao = bloco.querySelector('#check2');
-        const campoTexto = bloco.querySelector('#textocheck');
-    
-        if (!checkSim || !checkNao || !campoTexto) return; // segurança
-    
-        // Esconde inicialmente
-        campoTexto.style.display = 'none';
-    
-        checkSim.addEventListener('change', () => {
-          if (checkSim.checked) {
-            campoTexto.style.display = 'block';
-            checkNao.checked = false;
-          } else {
-            campoTexto.style.display = 'none';
-          }
-        });
-    
-        checkNao.addEventListener('change', () => {
-          if (checkNao.checked) {
-            checkSim.checked = false;
-            campoTexto.style.display = 'none';
-          }
-        });
       });
     
     </script>

@@ -1,5 +1,11 @@
+a{
+    font-family: "Instrument Sans", sans-serif;    
+    color: #FFFFFF;
+    text-decoration: none;
+}
 
-/* Estilizando a página inteira */
+
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -21,39 +27,43 @@ body {
     left: -180px; /* Esconde a barra lateral fora da tela */
     transition: left 0.3s ease-in-out; /* Efeito suave ao aparecer */
     z-index: 999; /* Mantém abaixo da header */
+    left: 0;
 }
 
+nav{
+    width: 50%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
 
-
+}
 
 /* Quando o usuário passa o mouse na lateral da tela, a barra aparece */
 .barralteral:hover {
     left: 0;
 }
 
-.barralteral ul {
-    list-style: none;
-    padding: 0;
-    flex-grow: 1;
-}
 
-.barralteral ul li {
-    margin: 15px 0;
-}
+.barralteral {
+    margin-top: 0px;
+    display: flex; /* Alinha no eixo principal (vertical no column) */
+    align-items: center;         /* Alinha no eixo cruzado (horizontal) */
+    text-align: center;
+    left: -180px; /* Esconde a barra lateral fora da tela */
+  }
 
-.barralteral ul li a {
-    color: white !important;
-    text-decoration: none;
+
+
+.barralteral nav ul {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    font-weight: bold;
-}
-
-.barralteral ul li a img {
-    width: 50px; 
-    height: 50px;
-    margin-right: 8px;
-}
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    gap: 20px;
+  }
+  
 
 .principal {
     flex: 1;
@@ -178,4 +188,8 @@ nav ul li a {
 
 .barralteral:hover ~ .principal {
     margin-left: 180px; /* Empurra o conteúdo para a direita */
+}
+
+.botoes-lado-a-lado {
+    display: inline-flex;
 }

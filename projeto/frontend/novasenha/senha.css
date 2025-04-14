@@ -1,0 +1,53 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+    font-family: Arial, sans-serif;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .container {
+    text-align: center;
+  }
+  
+  .instruction {
+    margin-bottom: 20px;
+  }
+  
+  .input-email {
+    padding: 10px 15px;
+    width: 300px;
+    background-color: #4a4141;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    margin-bottom: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .input-email::placeholder {
+    color: #d1d1d1;
+  }
+  
+  .btn {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 16px;
+    margin-bottom: 20px;
+    cursor: pointer;
+  }
+  
+  .link-voltar {
+    display: block;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+  }
+  

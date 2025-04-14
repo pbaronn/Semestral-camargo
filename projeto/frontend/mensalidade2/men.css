@@ -72,6 +72,8 @@ nav{
     margin-top: 30px; /* Para ficar abaixo da header */
     transition: margin-left 0.3s ease-in-out; /* Animação suave ao abrir */
 }
+
+/* Cabeçalho */
 header {
     display: flex;
     padding: 30px;
@@ -86,93 +88,97 @@ header {
     height: 50px; /* Ajuste a altura conforme necessário */
     box-sizing: border-box;
 }
-/* Centraliza barra de pesquisa */
-.barrapesquisa {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-grow: 1;
+
+
+.barralteral:hover ~ .principal header {
+    left: 180px;
 }
 
-.barra-pesquisa {
-    padding: 8px;
-    width: 300px;
-    border-radius: 60px;
-    border: 1px solid #ccc;
-    text-align: center; /* Centraliza o texto na barra */
+.barralteral:hover ~ .principal {
+    margin-left: 180px; /* Empurra o conteúdo para a direita */
 }
 
-/* Ícone de busca */
-.pesquisa-icon {
-    width: 22px;
-    margin-left: -30px;
-}
-
-/* Informações do usuário */
-.usuario-info {
-    display: flex;
-    align-items: center;
-    white-space: nowrap;
-}
-
-.usuario-info img {
-    width: 20px;
-    margin-left: 10px;
-}
-.form-container {
-    max-width: 500px;
-    margin: 20px auto;
-}
-label, p {
-    display: block;
-    margin-top: 10px;
-    font-weight: bold;
-}
-input {
-    width: 100%;
-    padding: 5px;
-    margin-top: 5px;
-    border: 1px solid #000;
-}
-.password-fields {
-    display: none;
-}
-.buttons {
-    margin-top: 10px;
-    display: flex;
-    gap: 10px;
-}
-button {
-    padding: 5px 10px;
-    border: none;
-    cursor: pointer;
-    background: #000;
-    color: #fff;
-}
-button.cancel {
-    background: #aaa;
+/* Conteúdo principal */
+.principal {
+    flex: 1;
+    padding: 50px;
+    margin-left: 0; /* Sem espaço quando a barra lateral está oculta */
+    margin-top: 30px; /* Para ficar abaixo da header */
+    transition: margin-left 0.3s ease-in-out; /* Animação suave ao abrir */
 }
 
 
-.botoes-final button {
-    padding: 10px 20px;
+.info {
+    background: black;
+    color: white;
+    padding: 15px;
+    margin: 30px auto 60px auto;
     font-size: 16px;
-    font-family: "Instrument Sans", sans-serif;
+    border-radius: 6px;
+    max-width: 800px;
+    width: 100%;
+    text-align: left;
+}
+
+/* Container de mensalidade */
+.mensalidade-container {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.mensalidade-box {
+    width: 400px;
+    max-width: 100%;
+    border-top: 1px solid #000000;
+    padding-top: 10px;
+}
+
+.mensalidade-box h3 {
+    font-weight: bold;
+}
+
+.mensalidade-box label {
+    display: block;
+    margin-top: 15px;
+}
+
+.mensalidade-box input {
+    width: 100%;
     border: none;
-    border-radius: 8px;
+    border-bottom: 1px solid #000;
+    padding: 5px;
+    font-size: 14px;
+    background: transparent;
+}
+
+.botoes-novo {
+    margin-top: 20px;
+}
+
+.botoes-novo button {
+    margin-right: 20px;
+    padding: 8px 16px;
+    font-weight: bold;
+    border: none;
     cursor: pointer;
-    transition: 0.3s;
 }
 
-.btn-salvar {
-    background-color: transparent;
-    color:black;
-    font-weight: bold;
-    
+.salvar {
+    background-color: black;
+    color: white;
 }
 
-.btn-cancelar {
-    background-color: transparent;
-    color:black;
-    font-weight: bold;
+.cancelar {
+    background-color: #f1f1f1;
+    color: black;
+}
+
+.historico-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid #000000;
 }

@@ -39,8 +39,10 @@
 
 
         <section class="menu">
-            <h2>Menu</h2>
-            <button class="btn-novo"><img src="imgm/pe.png" alt="Novo"> Novo</button>
+            <div class="botoes-lado-a-lado">
+                <button class="btn-novo"><img src="imgm/pe.png" alt="Novo"> Novo</button>
+                <button class="btn-novo" id="mensalidade-btn"><img src="imgm/dindin.png" alt="Mensalidades"> Mensalidade</button>
+            </div>
             <table>
                 <tr>
                     <td><button class="btn-editar"><img src="imgm/lapis.png" alt="Editar"> Editar</button></td>
@@ -82,6 +84,14 @@
 
     document.querySelector('.btn-novo').addEventListener('click', function () {
     window.location.href = "../novo/novo.html";
+});
+
+document.querySelector('.btn-editar').addEventListener('click', function () {
+    window.location.href = "../editar/editar.html";
+});
+
+document.getElementById("mensalidade-btn").addEventListener("click", function () {
+    window.location.href = "../mensalidade/mensalidade.html";
 });
 
 </script>
