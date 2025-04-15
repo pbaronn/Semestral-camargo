@@ -30,7 +30,7 @@ Funcionalidades:
 
 •	HTML, CSS, JS;
 
-•	Node.js com Express(estruturar as rotas, lidar com requisições HTTP e configurar a aplicação);
+•	php;
 
 •	Banco de dados MySQL;
 
@@ -38,4 +38,4 @@ Funcionalidades:
 
 •	GitHub;
 
-•	JIRA.
+•	trello
