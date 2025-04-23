@@ -1,0 +1,225 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #c7c7c7;
+    min-height: 100vh;
+}
+
+.header {
+    background-color: #000000;
+    color: white;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo {
+    width: 75px;
+    height: 65px;
+    border-radius: 20%;
+}
+
+
+.user-info {
+    color: white;
+    font-size: 0.9rem;
+}
+
+.main-nav {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.nav-item {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+
+.nav-item img {
+    width: 20px;
+    height: 20px;
+}
+
+.menu-container {
+    max-width: 1200px;
+    margin: 1rem auto;
+    padding: 1rem;
+}
+
+.menu-container h1 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.search-container {
+    display: flex;
+    margin: 1rem auto;
+    gap: 0.5rem;
+    max-width: 600px;
+}
+
+
+.mensalidade-container {
+    max-width: 1200px;
+    margin: 1rem auto;
+    padding: 1rem;
+}
+
+.mensalidade-container h1 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.form-container {
+    background-color: #d8d6d6;
+    padding: 2rem;
+    border-radius: 20px;
+}
+
+.info-section {
+    margin-bottom: 2rem;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: inline-block;
+    font-weight: bold;
+    margin-right: 0.5rem;
+}
+
+.content-section {
+    display: flex;
+    gap: 2rem;
+}
+
+.novo-section, .historico-section {
+    flex: 1;
+}
+
+.novo-section {
+    border-right: 1px solid #000000;
+    padding-right: 2rem;
+}
+
+.form-input {
+    display: block;
+    width: 100%;
+    padding: 0.5rem;
+    margin-top: 0.3rem;
+    border: none;
+    border-bottom: 1px solid #000;
+    background: transparent;
+}
+
+.button-group {
+    margin-top: 2rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.btn-salvar, .btn-cancelar {
+    padding: 0.5rem 1.5rem;
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.btn-salvar {
+    background-color: #000;
+    color: white;
+}
+
+.btn-cancelar {
+    background-color: #f0f0f0;
+}
+
+.novo-section h2 {
+    margin-bottom: 2rem;
+    font-size: 1.2rem;
+}
+
+.historico-section h2 {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.historico-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.historico-item {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #000;
+    padding-bottom: 0.5rem;
+}
+
+.historico-item .data,
+.historico-item .valor {
+    flex: 1;
+}
+
+.vencimento-section {
+    background-color: #c7c7c7;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    border-radius: 20px;
+}
+
+.vencimento-title {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.vencimento-content {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.select-vencimento {
+    padding: 0.5rem;
+    border: 1px solid #000000;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    width: 150px;
+    background-color: white;
+}
+
+.btn-alterar-vencimento {
+    padding: 0.5rem 1rem;
+    background-color: #000;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.btn-alterar-vencimento:hover {
+    opacity: 0.9;
+} 

@@ -1,62 +1,52 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mensalidade</title>
-    <link rel="stylesheet" href="mensalidade.css"> <!-- Importa o arquivo de estilos CSS -->
-    <script defer src="script.js"></script> <!-- Importa o arquivo JavaScript -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="mensalidade.css">
 </head>
-
 <body>
-    <div class="barralteral">
-        <nav>
-            <ul>
-                <li><a href="#" id="inicio"><img src="img/casa.png" alt="Início"> Início</a></li>
-                <li><a href="#" id="configuracao"><img src="img/eng.png" alt="Configurações"> Configurações</a></li>
-                <li><a href="#" id="logout"><img src="img/sair.png" alt="Sair"> Sair</a></li>
-            </ul>
+    <header class="header">
+        <div class="logo-container">
+            <img src="img/logo.png" alt="Logo" class="logo">
+            <div class="user-info">
+                Seja bem vindo, @Camargo
+            </div>
+        </div>
+        <nav class="main-nav">
+            <a href="#" class="nav-item" id="inicio"><img src="img/casa.png" alt="Início"> Início</a>
+            <a href="#" class="nav-item" id="config"><img src="img/eng.png" alt="Configurações"> Configurações</a>
+            <a href="#" class="nav-item" id="sair"><img src="img/sair.png" alt="Sair"> Sair</a>
         </nav>
+    </header>
+
+    <div class="menu-container">
+        <h1>Mensalidade</h1>
+        
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Buscar">
+            <button type="button" class="search-button">
+                <img src="img/lupa.png" alt="Buscar">
+            </button>
+        </div>
+
+        
+
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Editar</th>
+                    <th>Nome</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Dados serão inseridos via JavaScript -->
+            </tbody>
+        </table>
     </div>
 
-    <div class="principal">
-        <header>
-                
-            </div>
-        </header>
-    </div>
-
-    <div class="formulario">
-        <form>
-            <input type="text" class="texto" placeholder="Digite o nome"><br><br>
-            <div class="botoes">
-                <button type="button" onclick="window.location.href='../menu/menu.html'">Voltar</button>
-                <button type="button" onclick="window.location.href='../mensalidade2/men.html'">Continuar</button>
-            </div>
-        </form>
-    </div>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            // Redireciona para 'menu.html' ao clicar em "Início"
-            document.getElementById("inicio").addEventListener("click", function (event) {
-                event.preventDefault();
-                window.location.href = "../menu/menu.html";
-            });
-    
-            // Redireciona para 'login.html' ao clicar em "Sair"
-            document.getElementById("logout").addEventListener("click", function (event) {
-                event.preventDefault();
-                window.location.href = "../login/login.html";
-            });
-            document.getElementById("configuracao").addEventListener("click", function (event) {
-                event.preventDefault();
-                window.location.href = "../configuracoes/config.html";
-            });
-      });
-    
-    </script>
+    <script src="mensalidade.js"></script>
+</body>
+</html> 

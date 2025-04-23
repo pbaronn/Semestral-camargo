@@ -1,218 +1,134 @@
-/* Estilizando a página inteira */
-a{
-    font-family: "Instrument Sans", sans-serif;    
-    color: #FFFFFF;
-    text-decoration: none;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
 }
-
-
 
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    height: 100vh; /* Garante que a página ocupe toda a altura da tela */
-    overflow: scroll;
+    background-color: #c7c7c7;
 }
 
-.barralteral {
-    width: 180px;
-    background: #000000;
-    padding: 15px;
-    height: calc(100vh - 50px); /* Para não cobrir a header */
-    display: flex;
-    flex-direction: column;
-    position: fixed;
-    top: 50px; /* Mantém abaixo da header */
-    left: -180px; /* Esconde a barra lateral fora da tela */
-    transition: left 0.3s ease-in-out; /* Efeito suave ao aparecer */
-    z-index: 999; /* Mantém abaixo da header */
-    left: 0;
-}
-
-nav{
-    width: 50%;
-    align-items: center;
-    justify-content: center;
-    display: flex;
-
-}
-
-/* Quando o usuário passa o mouse na lateral da tela, a barra aparece */
-.barralteral:hover {
-    left: 0;
-}
-
-.barralteral {
-    margin-top: 0px;
-    display: flex; /* Alinha no eixo principal (vertical no column) */
-    align-items: center;         /* Alinha no eixo cruzado (horizontal) */
-    text-align: center;
-    left: -180px; /* Esconde a barra lateral fora da tela */
-  }
-
-
-.barralteral nav ul {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 0;
-    margin: 0;
-    list-style: none;
-    gap: 20px;
-  }
-  .principal {
-    width: 20%;
-    padding: 50px;
-    margin-left: 0; /* Sem espaço quando a barra lateral está oculta */
-    margin-top: 30px; /* Para ficar abaixo da header */
-    transition: margin-left 0.3s ease-in-out; /* Animação suave ao abrir */
-}
-header {
-    display: flex;
-    padding: 30px;
-    align-items: center;
-    background: #000000;
-    width: 100%; /* Mantém a largura sempre ocupando toda a tela */
-    position: fixed;
-    top: 0;
-    left: 0; /* Sempre começa do canto esquerdo da tela */
-    right: 0;
-    z-index: 10;
-    height: 50px; /* Ajuste a altura conforme necessário */
-    box-sizing: border-box;
-}
-/* Centraliza barra de pesquisa */
-.barrapesquisa {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-grow: 1;
-}
-
-.barrapesquisa img{
-    width: 30px !important;
-    height: 30px !important;
-}
-
-/* Ícone de busca */
-.pesquisa-icon {
-    width: 22px !important;
-    margin-left: -30px !important;
-}
-
-/* Informações do usuário */
-.usuario-info {
-    display: flex;
-    align-items: center;
-    white-space: nowrap;
-    position: absolute;
-    right: 10vh;
-}
-
-.usuario-info img {
-    width: 20px;
-    margin-left: 10px;
-}
-.form-container {
-    max-width: 500px;
-    margin: 20px auto;
-}
-label, p {
-    display: block;
-    margin-top: 10px;
-    font-weight: bold;
-}
-input {
-    width: 100%;
-    padding: 5px;
-    margin-top: 5px;
-    border: 1px solid #000;
-}
-.password-fields {
-    display: none;
-}
-.buttons {
-    margin-top: 10px;
-    display: flex;
-    gap: 10px;
-}
-button {
-    padding: 5px 10px;
-    border: none;
-    cursor: pointer;
-    background: #000;
-    color: #fff;
-}
-button.cancel {
-    background: #aaa;
-}
-
-span{
-    color: #FFFFFF;
-}
-
-input[type="search"] {
-    padding: 8px;
-    width: 300px;
-    border-radius: 60px;
-    border: 1px solid #000000;
-    text-align: center; /* Centraliza o texto na barra */
-}
-
-
-
-.formulario {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
+.header {
     background-color: #000000;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.formulario input.texto {
-    width: 300px;
-    padding: 10px;
-    font-size: 16px;
-    border-radius: 6px;
-    border: 1px solid #000000;
-}
-
-.botoes {
-    margin-top: 20px;
+    color: white;
+    padding: 1rem;
     display: flex;
-    justify-content: center;
-    gap: 15px;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.botoes button {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 6px;
-    background-color: #f8f5f5;
-    color: #0a0a0a;
-    font-size: 16px;
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo {
+    width: 75px;
+    height: 65px;
+    border-radius: 20%;
+}
+
+.main-nav {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-item {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.nav-item img {
+    width: 20px;
+    height: 20px;
+}
+
+.menu-container {
+    max-width: 1200px;
+    margin: 1rem auto;
+    padding: 1rem;
+}
+
+.menu-container h1 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.search-container {
+    display: flex;
+    margin: 1rem auto;
+    gap: 0.5rem;
+    max-width: 600px;
+}
+
+#searchInput {
+    flex: 1;
+    padding: 0.3rem 0.5rem;
+    border: 1px solid #000000;
+    border-radius: 50px;
+    height: 30px;
+    font-size: 0.9rem;
+}
+
+.search-button {
+    padding: 0.3rem 0.8rem;
+    background: white;
+    border: 1px solid #000000;
+    border-radius: 50px;
     cursor: pointer;
+    height: 30px;
 }
 
-.botoes button:hover {
-    background-color: #494949;
-}
-
-.titulo-lateral {
-    position: absolute;
-    top: 60px; /* logo abaixo da header que tem 50px de altura */
-    left: 30px; /* distância da lateral esquerda, ajustado após a barra lateral */
-    font-size: 10px;
-    font-weight: bold;
-    color: #000;
-    z-index: 5;
-    padding: 10px;
+.search-button img {
+    width: 16px;
+    height: 16px;
 }
 
 
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    background-color: white;
+}
+
+.data-table th,
+.data-table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.data-table th {
+    background-color: #000;
+    color: white;
+}
+
+.data-table tbody tr:hover {
+    background-color: #615f5f;
+}
+
+.btn-editar {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-editar:hover {
+    opacity: 0.8;
+}
+
+.btn-editar img {
+    width: 30px;
+    height: 30px;
+    display: block;
+} 

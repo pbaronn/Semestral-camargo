@@ -1,206 +1,187 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar Cadastro</title>
-    <link rel="stylesheet" href="editar.css"> <!-- Importa o arquivo de estilos CSS -->
-    <script defer src="script.js"></script> <!-- Importa o arquivo JavaScript -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="editar.css">
 </head>
-
 <body>
-    <div class="barralteral">
-        <nav>
-            <ul>
-                <li><a href="#" id="inicio"><img src="img/casa.png" alt="Início"> Início</a></li>
-                <li><a href="#" id="configuracao"><img src="img/eng.png" alt="Configurações"> Configurações</a></li>
-                <li><a href="#" id="logout"><img src="img/sair.png" alt="Sair"> Sair</a></li>
-            </ul>
+    <header class="header">
+        <div class="logo-container">
+            <img src="img/logo.png" alt="Logo" class="logo">
+            <div class="user-info">
+                Seja bem vindo, @Camargo
+            </div>
+        </div>
+        <nav class="main-nav">
+            <a href="#" class="nav-item" id="inicio"><img src="img/casa.png" alt="Início"> Início</a>
+            <a href="#" class="nav-item" id="config"><img src="img/eng.png" alt="Configurações"> Configurações</a>
+            <a href="#" class="nav-item" id="sair"><img src="img/sair.png" alt="Sair"> Sair</a>
         </nav>
-    </div>
+    </header>
 
-    <div class="principal">
-        <header>
-            <div class="barrapesquisa">
-                <input type="search" placeholder="Busque aqui" class="barra-pesquisa">
-                <img src="img/lupa.png" alt="Buscar" class="pesquisa-icon">
-            </div>
-        </header>
+    <div class="cadastro-container">
+        <h1>Editar Cadastro</h1>
         
+        <div class="cadastro-form">
+            <div class="form-group">
+                <label for="nome">Nome</label>
+                <input type="text" id="nome" class="form-input">
+            </div>
+
+            <div class="form-group">
+                <label for="sobrenome">Sobrenome</label>
+                <input type="text" id="sobrenome" class="form-input">
+            </div>
+
+            <div class="form-group">
+                <label for="dataNascimento">Data de nascimento</label>
+                <input type="text" id="dataNascimento" class="form-input">
+            </div>
+
+            <div class="form-group">
+                <label for="cpf">CPF</label>
+                <input type="text" id="cpf" class="form-input">
+            </div>
+
+            <div class="form-group">
+                <label for="tel1">Tel.</label>
+                <input type="text" id="tel1" class="form-input">
+            </div>
+
+            <div class="form-group">
+                <label for="tel2">Tel. 2</label>
+                <input type="text" id="tel2" class="form-input">
+            </div>
+
+            <div class="form-group">
+                <label for="endereco">Endereço</label>
+                <input type="text" id="endereco" class="form-input">
+            </div>
+
+            <div class="form-group">
+                <label for="email">E-mail</label>
+                <input type="email" id="email" class="form-input">
+            </div>
+
+            <div class="form-group">
+                <label for="observacoes">Observações</label>
+                <textarea id="observacoes" class="form-input textarea"></textarea>
+            </div>
+
+            <div class="form-group checkbox-group">
+                <label>Possui alguma condição de saúde pré-existente?</label>
+                <div class="radio-options">
+                    <label class="radio-label">
+                        <input type="radio" name="saude" value="nao"> Não
+                    </label>
+                    <label class="radio-label">
+                        <input type="radio" name="saude" value="sim"> Sim
+                    </label>
+                </div>
+                <input type="text" class="form-input hidden" id="saudeDesc">
+            </div>
+
+            <div class="form-group checkbox-group">
+                <label>Já teve alguma lesão grave ou cirurgia?</label>
+                <div class="radio-options">
+                    <label class="radio-label">
+                        <input type="radio" name="lesao" value="nao"> Não
+                    </label>
+                    <label class="radio-label">
+                        <input type="radio" name="lesao" value="sim"> Sim
+                    </label>
+                </div>
+                <input type="text" class="form-input hidden" id="lesaoDesc">
+            </div>
+
+            <div class="form-group checkbox-group">
+                <label>Possui alguma restrição médica para atividades físicas?</label>
+                <div class="radio-options">
+                    <label class="radio-label">
+                        <input type="radio" name="restricao" value="nao"> Não
+                    </label>
+                    <label class="radio-label">
+                        <input type="radio" name="restricao" value="sim"> Sim
+                    </label>
+                </div>
+                <input type="text" class="form-input hidden" id="restricaoDesc">
+            </div>
+
+            <div class="form-group checkbox-group">
+                <label>Está fazendo uso de alguma medicação contínua?</label>
+                <div class="radio-options">
+                    <label class="radio-label">
+                        <input type="radio" name="medicacao" value="nao"> Não
+                    </label>
+                    <label class="radio-label">
+                        <input type="radio" name="medicacao" value="sim"> Sim
+                    </label>
+                </div>
+                <input type="text" class="form-input hidden" id="medicacaoDesc">
+            </div>
+
+            <div class="form-group checkbox-group">
+                <label>Tem alergia a algum medicamento ou substância?</label>
+                <div class="radio-options">
+                    <label class="radio-label">
+                        <input type="radio" name="alergia" value="nao"> Não
+                    </label>
+                    <label class="radio-label">
+                        <input type="radio" name="alergia" value="sim"> Sim
+                    </label>
+                </div>
+                <input type="text" class="form-input hidden" id="alergiaDesc">
+            </div>
+
+            <div class="form-group checkbox-group">
+                <label>Já teve episódios de tontura, desmaios ou problemas cardíacos ao praticar exercícios?</label>
+                <div class="radio-options">
+                    <label class="radio-label">
+                        <input type="radio" name="episodios" value="nao"> Não
+                    </label>
+                    <label class="radio-label">
+                        <input type="radio" name="episodios" value="sim"> Sim
+                    </label>
+                </div>
+                <input type="text" class="form-input hidden" id="episodiosDesc">
+            </div>
+
+            <div class="form-group checkbox-group">
+                <label>Tem autorização médica para a prática de atividades físicas?</label>
+                <div class="radio-options">
+                    <label class="radio-label">
+                        <input type="radio" name="autorizacao" value="nao"> Não
+                    </label>
+                    <label class="radio-label">
+                        <input type="radio" name="autorizacao" value="sim"> Sim
+                    </label>
+                </div>
+                <input type="text" class="form-input hidden" id="autorizacaoDesc">
+            </div>
+
+            <div class="form-group checkbox-group">
+                <label>Está fazendo uso de alguma medicação contínua?</label>
+                <div class="radio-options">
+                    <label class="radio-label">
+                        <input type="radio" name="medicacaoContinua" value="nao"> Não
+                    </label>
+                    <label class="radio-label">
+                        <input type="radio" name="medicacaoContinua" value="sim"> Sim
+                    </label>
+                </div>
+                <input type="text" class="form-input hidden" id="medicacaoContinuaDesc">
+            </div>
+
+            <div class="button-group">
+                <button class="btn-voltar" id="btnvoltar">Voltar</button>
+                <button class="btn-cancelar" id="btnCancelar">Cancelar</button>
+                <button class="btn-apagar" id="btnapagar">Apagar Cadastro</button>
+            </div>
+        </div>
     </div>
 
-    <div class="formulario">
-        <form>
-            <input type="text" class="texto" placeholder="Nome"><br>
-            <input type="text" class="texto" placeholder="Sobrenome"><br>
-            <input type="date" class="texto" placeholder="Data de nascimento"><br>
-            <input type="text" class="texto" placeholder="CPF"><br>
-            <input type="text" class="texto" placeholder="Telefone"><br>
-            <input type="text" class="texto" placeholder="Telefone 2"><br>
-            <input type="text" class="texto" placeholder="Endereço"><br>
-            <input type="email" class="texto" placeholder="Email"><br>
-            <input type="text" class="texto" placeholder="Observação"><br>
-            
-            <br><br>
-            
-           <br>
-            <p>Possui alguma condição de saúde pré-existente?</p>
-            
-            <div class="checks">
-                <div class="checkboxes">
-                    <label><input type="checkbox" id="check2"> Não</label>
-                    <label><input type="checkbox" id="check1"> Sim</label>
-                    <input type="text" class="texto" id="textocheck" placeholder="Observação">
-                </div>
-            </div>
-            <br>
-            <p>Já teve alguma lesão grave ou cirurgia?</p>
-            
-            <div class="checks">
-                <div class="checkboxes">
-                    <label><input type="checkbox" id="check2"> Não</label>
-                    <label><input type="checkbox" id="check1"> Sim</label>
-                    <input type="text" class="texto" id="textocheck" placeholder="Observação">
-                </div>
-            </div>
-            <br>
-            <p>Possui alguma restrição médica para atividades físicas?</p>
-            
-            <div class="checks">
-                <div class="checkboxes">
-                    <label><input type="checkbox" id="check2"> Não</label>
-                    <label><input type="checkbox" id="check1"> Sim</label>
-                    <input type="text" class="texto" id="textocheck" placeholder="Observação">
-                </div>
-            </div>
-            <br>
-            <p>Está fazendo uso de alguma medicação contínua?</p>
-            
-            <div class="checks">
-                <div class="checkboxes">
-                    <label><input type="checkbox" id="check2"> Não</label>
-                    <label><input type="checkbox" id="check1"> Sim</label>
-                    <input type="text" class="texto" id="textocheck" placeholder="Observação">
-                </div>
-            </div>
-            <br>
-            <p>Tem alergia a algum medicamento ou substância?</p>
-            
-            <div class="checks">
-                <div class="checkboxes">
-                    <label><input type="checkbox" id="check2"> Não</label>
-                    <label><input type="checkbox" id="check1"> Sim</label>
-                    <input type="text" class="texto" id="textocheck" placeholder="Observação">
-                </div>
-            </div>
-            <br>
-            <p>Já teve episódios de tontura, desmaio ou problemas cardíacos ao praticar exercícios?</p>
-            
-            <div class="checks">
-                <div class="checkboxes">
-                    <label><input type="checkbox" id="check2"> Não</label>
-                    <label><input type="checkbox" id="check1"> Sim</label>
-                    <input type="text" class="texto" id="textocheck" placeholder="Observação">
-                </div>
-            </div>
-            <br>
-            <p>Tem autorização médica para a prática de atividades físicas?</p>
-            
-            <div class="checks">
-                <div class="checkboxes">
-                    <label><input type="checkbox" id="check2"> Não</label>
-                    <label><input type="checkbox" id="check1"> Sim</label>
-                    <input type="text" class="texto" id="textocheck" placeholder="Observação">
-                </div>
-            </div>
-            <br>
-            <p>Está fazendo uso de alguma medicação contínua?</p>
-            
-            <div class="checks">
-                <div class="checkboxes">
-                    <label><input type="checkbox" id="check2"> Não</label>
-                    <label><input type="checkbox" id="check1"> Sim</label>
-                    <input type="text" class="texto" id="textocheck" placeholder="Observação">
-                </div>
-            </div>
-            <div class="botoes-final">
-                <button type="button" class="btn-salvar" onclick="window.location.href='../menu/menu.html'">Salvar</button>
-                <button type="button" class="btn-deletar" onclick="window.location.href='../menu/menu.html'">Apagar Cadastro</button>
-                <button type="button" class="btn-cancelar" onclick="window.location.href='../menu/menu.html'">Cancelar</button>
-            </div>
-        </form>
-    </div>
-
-    
-    
+    <script src="editar.js"></script>
 </body>
-
 </html>
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        // Redireciona para 'menu.html' ao clicar em "Início"
-        document.getElementById("inicio").addEventListener("click", function (event) {
-            event.preventDefault();
-            window.location.href = "../menu/menu.html";
-        });
-
-        // Redireciona para 'login.html' ao clicar em "Sair"
-        document.getElementById("logout").addEventListener("click", function (event) {
-            event.preventDefault();
-            window.location.href = "../login/login.html";
-        });
-
-
-        // Alternar visibilidade dos campos de senha ao clicar em "Mudar senha"
-        document.getElementById("toggle-password").addEventListener("click", function () {
-            let passwordFields = document.getElementById("password-fields");
-
-            // Alterna entre mostrar e esconder
-            if (passwordFields.style.display === "none" || passwordFields.style.display === "") {
-                passwordFields.style.display = "block";
-            } else {
-                passwordFields.style.display = "none";
-            }
-        });
-
-        // Oculta os campos ao clicar em "Cancelar"
-        document.getElementById("cancel").addEventListener("click", function () {
-            document.getElementById("password-fields").style.display = "none";
-        });
-    });
-
-  // Seleciona todas as divs com class "checkboxes"
-  const blocos = document.querySelectorAll('.checkboxes');
-
-  blocos.forEach(bloco => {
-    const checkSim = bloco.querySelector('#check1');
-    const checkNao = bloco.querySelector('#check2');
-    const campoTexto = bloco.querySelector('#textocheck');
-
-    if (!checkSim || !checkNao || !campoTexto) return; // segurança
-
-    // Esconde inicialmente
-    campoTexto.style.display = 'none';
-
-    checkSim.addEventListener('change', () => {
-      if (checkSim.checked) {
-        campoTexto.style.display = 'block';
-        checkNao.checked = false;
-      } else {
-        campoTexto.style.display = 'none';
-      }
-    });
-
-    checkNao.addEventListener('change', () => {
-      if (checkNao.checked) {
-        checkSim.checked = false;
-        campoTexto.style.display = 'none';
-      }
-    });
-  });
-
-</script>

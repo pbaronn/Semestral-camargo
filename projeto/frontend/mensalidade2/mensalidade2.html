@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mensalidade</title>
+    <link rel="stylesheet" href="mensalidade2.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo-container">
+            <img src="img/logo.png" alt="Logo" class="logo">
+            <div class="user-info">
+                Seja bem vindo, @Camargo
+            </div>
+        </div>
+        <nav class="main-nav">
+            <a href="#" class="nav-item" id="inicio"><img src="img/casa.png" alt="Início"> Início</a>
+            <a href="#" class="nav-item" id="config"><img src="img/eng.png" alt="Configurações"> Configurações</a>
+            <a href="#" class="nav-item" id="sair"><img src="img/sair.png" alt="Sair"> Sair</a>
+        </nav>
+    </header>
+
+    <div class="mensalidade-container">
+        <h1>Mensalidade</h1>
+        
+        <div class="form-container">
+            <div class="info-section">
+                <div class="form-group">
+                    <label>Nome:</label>
+                    <span class="info-text"></span>
+                </div>
+                <div class="form-group">
+                    <label>Status da mensalidade:</label>
+                    <span class="info-text"></span>
+                </div>
+                <div class="form-group">
+                    <label>Status da matrícula:</label>
+                    <span class="info-text"></span>
+                </div>
+            </div>
+
+            <div class="vencimento-section">
+                <div class="vencimento-title"> Melhor Dia de Vencimento</div>
+                <div class="vencimento-content">
+                    <select id="diaVencimento" class="select-vencimento">
+                        <option value="">Selecione o dia</option>
+                        <option value="1">1</option>
+                        <option value="5">5</option>
+                        <option value="10">10</option>
+                        <option value="15">15</option>
+                        <option value="20">20</option>
+                        <option value="25">25</option>
+                        <option value="30">30</option>
+                    </select>
+                    <button class="btn-alterar-vencimento">Salvar</button>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <div class="novo-section">
+                    <h2>Novo</h2>
+                    <div class="form-group">
+                        <label for="data">Data</label>
+                        <input type="text" id="data" class="form-input">
+                    </div>
+                    <div class="form-group">
+                        <label for="valor">Valor</label>
+                        <input type="text" id="valor" class="form-input">
+                    </div>
+                    <div class="button-group">
+                        <button class="btn-salvar">Salvar</button>
+                        <button class="btn-cancelar">Cancelar</button>
+                    </div>
+                </div>
+
+                <div class="historico-section">
+                    <h2>Histórico</h2>
+                    <div class="historico-list">
+                        <div class="historico-item">
+                            <span class="data">Data</span>
+                            <span class="valor">Valor</span>
+                        </div>
+                        <div class="historico-item">
+                            <span class="data">Data</span>
+                            <span class="valor">Valor</span>
+                        </div>
+                        <div class="historico-item">
+                            <span class="data">Data</span>
+                            <span class="valor">Valor</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="mensalidade2.js"></script>
+</body>
+</html> 

@@ -6,95 +6,56 @@
     <title>Menu</title>
     <link rel="stylesheet" href="menu.css">
 </head>
-
-
-
 <body>
-    <div class="barralteral">
-        <nav>
-            <ul>
-                <li><a href="#" class="lateral"><img src="imgm/casa.png" alt="Início"> Início</a></li>
-                <li><a href="#" id="configuracao"><img src="imgm/eng.png" alt="Configurações"> Configurações</a></li>
-                <li><a href="#" id="logout"><img src="imgm/sair.png" alt="Sair"> Sair</a></li>
-            </ul>
+    <header class="header">
+        <div class="logo-container">
+            <img src="img/logo.png" alt="Logo" class="logo">
+            <div class="user-info">
+                Seja bem vindo, @Camargo
+            </div>
+        </div>
+        <nav class="main-nav">
+            <a href="#" class="nav-item"><img src="img/casa.png" alt="Início"> Início</a>
+            <a href="#" class="nav-item" id="config"><img src="img/eng.png" alt="Configurações"> Configurações</a>
+            <a href="#" class="nav-item" id="sair"><img src="img/sair.png" alt="Sair"> Sair</a>
         </nav>
+    </header>
+
+    <div class="menu-container">
+        <h1>Menu</h1>
+        
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Buscar">
+            <button type="button" class="search-button">
+                <img src="img/lupa.png" alt="Buscar">
+            </button>
+        </div>
+
+        <div class="action-buttons">
+            <button class="btn-novo" id="novo">
+                <img src="img/pe.png" alt="Novo" class="icon">
+                Novo
+            </button>
+            <button class="btn-mensalidade" id="mensalidade">
+                <img src="img/dindin.png" alt="Mensalidade" class="icon">
+                Mensalidade
+            </button>
+        </div>
+
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Editar</th>
+                    <th>Nome</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Dados serão inseridos via JavaScript -->
+            </tbody>
+        </table>
     </div>
 
-
-
-
-    <div class="principal">
-        <header>
-            <div class="barrapesquisa">
-                <input type="text" placeholder="Busque aqui" class="barra-pesquisa">
-                <img src="imgm/lupa.png" alt="Buscar" class="pesquisa-icon">
-            </div>
-            <div class="usuario-info">
-                <img src="imgm/person.png" alt="Usuário">
-                <span>Seja bem-vindo, Camargo!</span>
-            </div>
-        </header>
-
-
-
-
-        <section class="menu">
-            <div class="botoes-lado-a-lado">
-                <button class="btn-novo"><img src="imgm/pe.png" alt="Novo"> Novo</button>
-                <button class="btn-novo" id="mensalidade-btn"><img src="imgm/dindin.png" alt="Mensalidades"> Mensalidade</button>
-            </div>
-            <table>
-                <tr>
-                    <td><button class="btn-editar"><img src="imgm/lapis.png" alt="Editar"> Editar</button></td>
-                    <td>Nome Completo</td>
-                    <td><img src="imgm/alert.png" alt="alerta"></td>
-                </tr>
-                <tr>
-                    <td><button class="btn-editar"><img src="imgm/lapis.png" alt="Editar"> Editar</button></td>
-                    <td>Nome Completo</td>
-                    <td><img src="imgm/ok.png" alt="ok"></td>
-                </tr>
-                <tr>
-                    <td><button class="btn-editar"><img src="imgm/lapis.png" alt="Editar"> Editar</button></td>
-                    <td>Nome Completo</td>
-                    <td><img src="imgm/ok.png" alt="ok"></td>
-                </tr>
-                <tr>
-                    <td><button class="btn-editar"><img src="imgm/lapis.png" alt="Editar"> Editar</button></td>
-                    <td>Nome Completo</td>
-                    <td><img src="imgm/alert.png" alt="alerta"></td>
-                </tr>
-            </table>
-        </section>
-    </div>
-
-
-
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        document.getElementById("logout").addEventListener("click", function (event) {
-            event.preventDefault(); // Evita erro
-            window.location.href = "../login/login.html"; // volta pro login
-        })
-    })
-    document.getElementById("configuracao").addEventListener("click", function (event) {
-        event.preventDefault();
-        window.location.href = "../configuracoes/config.html";
-    });
-
-    document.querySelector('.btn-novo').addEventListener('click', function () {
-    window.location.href = "../novo/novo.html";
-});
-
-document.querySelector('.btn-editar').addEventListener('click', function () {
-    window.location.href = "../editar/editar.html";
-});
-
-document.getElementById("mensalidade-btn").addEventListener("click", function () {
-    window.location.href = "../mensalidade/mensalidade.html";
-});
-
-</script>
-    
+    <script src="menu.js"></script>
 </body>
-</html>
+</html> 
