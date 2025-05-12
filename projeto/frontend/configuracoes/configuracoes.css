@@ -141,7 +141,7 @@ body {
     background-color: #f0f0f0;
 }
 
-/* Animação para os campos de senha */
+
 .campos-senha {
     transition: all 0.3s ease;
     overflow: hidden;

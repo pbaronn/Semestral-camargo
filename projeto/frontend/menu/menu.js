@@ -1,11 +1,6 @@
-// Dados de exemplo
-const dadosTabela = [
-    { id: 1, nome: 'João Silva', status: 'Ativo' },
-    { id: 2, nome: 'Maria Santos', status: 'Inativo' },
-    { id: 3, nome: 'Pedro Oliveira', status: 'Ativo' }
-];
 
-// Função para renderizar a tabela
+
+// renderizar a tabela
 function renderizarTabela(dados) {
     const tbody = document.querySelector('.data-table tbody');
     tbody.innerHTML = '';
@@ -34,7 +29,7 @@ function buscar(termo) {
     renderizarTabela(resultados);
 }
 
-// Event listeners
+
 document.addEventListener('DOMContentLoaded', () => {
     // Renderiza a tabela inicial
     renderizarTabela(dadosTabela);
