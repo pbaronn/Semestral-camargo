@@ -67,7 +67,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                  WHERE cduser=$cduser";
 
     if ($conn->query($sql) === TRUE) {
-        echo 'Cadastro atualizado com sucesso!';
+        header('location: ../mensalidade/mensalidade.php');
     } else {
         echo 'Erro ao atualizar cadastro: ' . $conn->error;
     }

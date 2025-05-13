@@ -18,7 +18,7 @@ if (!isset($_SESSION['logado'])) {
         <div class="logo-container">
             <img src="img/logo.png" alt="Logo" class="logo">
             <div class="user-info">
-                Seja bem-vindo, <?php echo isset($_SESSION['username']) ? htmlspecialchars($_SESSION['username']) : 'Visitante';?>
+                Seja bem-vindo, <?php echo isset($_SESSION['nome']) ? htmlspecialchars($_SESSION['nome']) : 'Visitante';?>
             </div>
         </div>
         <nav class="main-nav">
@@ -41,7 +41,6 @@ if (!isset($_SESSION['logado'])) {
         <table class="data-table">
             <thead>
                 <tr>
-                    <th>Editar</th>
                     <th>Nome</th>
                     <th>Status</th>
                 </tr>
@@ -54,13 +53,12 @@ if (!isset($_SESSION['logado'])) {
                     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
                     // Consulta para obter os usuários
-                    $stmt = $pdo->query("SELECT cduser, username, 0 as status FROM user");
+                    $stmt = $pdo->query("SELECT cduser, nome, 0 as status FROM user_form");
 
                     // Listando os usuários
                     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
                         echo '<tr>';
-                        echo '<td><a href="../editar/editar.php?id=' . $row['cduser'] . '"><img src="../visualizar/img/lapis.png" alt="Editar" style="width: px; height: px;"></a></td>';
-                        echo '<td>' . htmlspecialchars($row['username']) . '</td>';
+                        echo '<td>' . htmlspecialchars($row['nome']) . '</td>';
                         echo '<td>' . htmlspecialchars($row['status']) . '</td>';
                         echo '</tr>';
                     }

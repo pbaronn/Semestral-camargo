@@ -1,219 +1,501 @@
 * {
+
     margin: 0;
+
     padding: 0;
+
     box-sizing: border-box;
+
     font-family: Arial, sans-serif;
+
 }
+
+
 
 body {
+
     background: #f4f6f8;
+
     font-family: 'Segoe UI', Arial, sans-serif;
+
     color: #222;
+
     margin: 0;
+
     padding: 0;
+
 }
+
+
 
 .header {
+
     background: #181c24;
+
     color: #fff;
-    padding: 18px 0 10px 0;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+
+    padding: 10px 0;
+
+    box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+
 }
+
+
 
 .logo-container {
+
     display: flex;
+
     align-items: center;
+
     justify-content: space-between;
+
     max-width: 1100px;
+
     margin: 0 auto;
-    padding: 0 24px;
+
+    padding: 0 32px;
+
 }
 
-.logo {
-    height: 44px;
-    border-radius: 10px;
+
+
+
+
+
+
+.header-right {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 24px;
+
 }
+
+
 
 .user-info {
-    font-size: 1.1rem;
+
+    font-size: 1rem;
+
     font-weight: 500;
+
     letter-spacing: 0.5px;
+
     background: #232733;
-    padding: 6px 18px;
-    border-radius: 20px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+
+    padding: 6px 16px;
+
+    border-radius: 16px;
+
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+
+    margin-right: 24px;
+
 }
+
+
 
 .main-nav {
+
     display: flex;
-    gap: 28px;
-    margin-top: 10px;
-    justify-content: flex-end;
+
+    gap: 32px;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex: 1;
+
 }
+
+
 
 .nav-item {
+
     color: #fff;
+
     text-decoration: none;
-    font-size: 1rem;
+
+    font-size: 0.98rem;
+
     display: flex;
+
     align-items: center;
-    gap: 7px;
-    padding: 6px 14px;
+
+    gap: 5px;
+
+    padding: 5px 10px;
+
     border-radius: 8px;
-    transition: background 0.2s, color 0.2s;
+
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+
 }
+
+
+
+.nav-item img {
+
+    width: 22px;
+
+    height: 22px;
+
+}
+
+
 
 .nav-item:hover {
-    background: #ffb347;
-    color: #181c24;
+
+    background: #232733;
+
+    color: #ffb347;
+
+    box-shadow: 0 2px 8px rgba(255,179,71,0.10);
+
 }
+
+
+
+.logo-container {
+
+    justify-content: flex-start;
+
+}
+
+
+
+.user-info {
+
+    order: 1;
+
+    margin-right: 32px;
+
+}
+
+
+
+.main-nav {
+
+    order: 2;
+
+    flex: 1;
+
+    justify-content: center;
+
+}
+
+
 
 .menu-container {
+
     background: #fff;
-    max-width: 800px;
-    margin: 40px auto 0 auto;
-    border-radius: 16px;
-    box-shadow: 0 6px 32px rgba(0,0,0,0.10);
-    padding: 38px 28px 28px 28px;
+
+    max-width: 850px;
+
+    margin: 48px auto 0 auto;
+
+    border-radius: 18px;
+
+    box-shadow: 0 8px 32px rgba(0,0,0,0.13);
+
+    padding: 44px 36px 36px 36px;
+
+    transition: box-shadow 0.3s;
+
 }
+
+
 
 .menu-container h1 {
+
     margin-top: 0;
-    font-size: 2.1rem;
+
+    font-size: 2.2rem;
+
     color: #222;
-    font-weight: 600;
+
+    font-weight: 700;
+
     letter-spacing: 1px;
-    margin-bottom: 24px;
+
+    margin-bottom: 28px;
+
+    text-shadow: 0 2px 8px rgba(0,0,0,0.04);
+
 }
+
+
 
 .search-container {
+
     display: flex;
+
     align-items: center;
+
     margin-bottom: 30px;
+
     gap: 10px;
+
 }
+
+
 
 #searchInput {
+
     flex: 1;
+
     padding: 10px 16px;
+
     border: 1px solid #d1d5db;
+
     border-radius: 6px;
+
     font-size: 1rem;
+
     background: #f9fafb;
+
     transition: border 0.2s;
+
 }
+
+
 
 #searchInput:focus {
+
     border: 1.5px solid #ffb347;
+
     outline: none;
+
 }
+
+
 
 .search-button {
+
     background: #ffb347;
+
     border: none;
+
     border-radius: 6px;
+
     padding: 8px 14px;
+
     cursor: pointer;
+
     transition: background 0.2s;
+
     display: flex;
+
     align-items: center;
+
 }
+
+
 
 .search-button img {
+
     width: 20px;
+
     height: 20px;
+
 }
+
+
 
 .search-button:hover {
+
     background: #ffa500;
+
 }
+
+
 
 .action-buttons {
+
     display: flex;
-    gap: 16px;
-    margin-bottom: 28px;
+
+    gap: 18px;
+
+    margin-bottom: 32px;
+
 }
+
+
 
 .btn-novo, .btn-mensalidade {
+
     display: flex;
+
     align-items: center;
+
     gap: 8px;
+
     background: #181c24 !important;
+
     color: #fff !important;
+
     border: none;
-    border-radius: 6px;
-    padding: 10px 22px;
-    font-size: 1rem;
-    font-weight: 500;
+
+    border-radius: 8px;
+
+    padding: 12px 28px;
+
+    font-size: 1.05rem;
+
+    font-weight: 600;
+
     cursor: pointer;
+
     text-decoration: none;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s, transform 0.2s;
+
 }
+
+
 
 .btn-novo:hover, .btn-mensalidade:hover {
+
     background: #232733 !important;
-    color: #fff !important;
-    box-shadow: 0 4px 16px rgba(24,28,36,0.10);
+
+    color: #ffb347 !important;
+
+    box-shadow: 0 6px 24px rgba(24,28,36,0.13);
+
+    transform: translateY(-2px) scale(1.03);
+
 }
+
+
 
 .data-table {
+
     width: 100%;
+
     border-collapse: separate;
+
     border-spacing: 0;
+
     margin-top: 10px;
+
     background: #fff;
-    border-radius: 10px;
+
+    border-radius: 12px;
+
     overflow: hidden;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+
+    box-shadow: 0 4px 18px rgba(0,0,0,0.10);
+
 }
+
+
 
 .data-table th, .data-table td {
-    padding: 14px 10px;
+
+    padding: 16px 12px;
+
     text-align: left;
+
 }
+
+
 
 .data-table th {
-    background: #f4f6f8;
-    color: #181c24;
-    font-weight: 600;
+
+    background: #232733;
+
+    color: #fff;
+
+    font-weight: 700;
+
     border-bottom: 2px solid #e5e7eb;
+
+    letter-spacing: 0.5px;
+
 }
+
+
 
 .data-table tr {
+
     border-bottom: 1px solid #e5e7eb;
+
     transition: background 0.2s;
+
 }
+
+
 
 .data-table tr:nth-child(even) {
-    background: #fafbfc;
+
+    background: #f7f8fa;
+
 }
+
+
 
 .data-table tr:hover {
-    background: #f9fafb;
+
+    background: #f0f1f3;
+
+    box-shadow: 0 2px 12px rgba(255,179,71,0.08);
+
 }
+
+
 
 .data-table td img {
+
     width: 22px;
+
     height: 22px;
+
+    filter: drop-shadow(0 1px 2px rgba(0,0,0,0.10));
+
 }
 
+
+
 @media (max-width: 900px) {
+
     .menu-container {
+
         padding: 18px 6px;
+
     }
+
     .logo-container {
+
         flex-direction: column;
+
         align-items: flex-start;
+
         gap: 10px;
+
     }
+
     .main-nav {
+
         flex-direction: column;
+
         gap: 10px;
+
         margin-top: 10px;
+
     }
+
     .action-buttons {
+
         flex-direction: column;
+
         gap: 10px;
+
     }
-} 
+
+}

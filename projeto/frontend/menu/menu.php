@@ -16,16 +16,15 @@ if (!isset($_SESSION['logado'])) {
 <body>
     <header class="header">
         <div class="logo-container">
-            <img src="img/logo.png" alt="Logo" class="logo">
             <div class="user-info">
                 Seja bem vindo, <?php echo htmlspecialchars($_SESSION['usuario']); ?>
             </div>
+            <nav class="main-nav">
+                <a href="menu.php" class="nav-item"><img src="img/casa.png" alt="Início"> Início</a>
+                <a href="../configuracoes/configuracoes.php" class="nav-item"><img src="img/eng.png" alt="Configurações"> Configurações</a>
+                <a href="../login/logout.php" class="nav-item"><img src="img/sair.png" alt="Sair"> Sair</a>
+            </nav>
         </div>
-        <nav class="main-nav">
-            <a href="menu.php" class="nav-item"><img src="img/casa.png" alt="Início"> Início</a>
-            <a href="../configuracoes/configuracoes.php" class="nav-item" id="config"><img src="img/eng.png" alt="Configurações"> Configurações</a>
-            <a href="../login/logout.php" class="nav-item" id="sair"><img src="img/sair.png" alt="Sair"> Sair</a>
-        </nav>
     </header>
 
     <div class="menu-container">
@@ -53,21 +52,22 @@ if (!isset($_SESSION['logado'])) {
             <thead>
                 <tr>
                     <th>Editar</th>
+                    <th>Código</th>
                     <th>Nome</th>
-                    <th>Status</th>
                 </tr>
             </thead>
             <tbody>
                 <?php
-                require_once '../login/conexao.php';
-                
+                require_once '../../backend/conecta.php';
+                $conn = new mysqli($host, $user, $password, $database);
+
                 $sql = "SELECT cd_userform, nome, sobrenome FROM user_form ORDER BY nome";
                 $result = $conn->query($sql);
                 
                 if ($result && $result->num_rows > 0) {
                     while($row = $result->fetch_assoc()) {
                         echo "<tr>";
-                        echo "<td><a href='../editar/editar.php?id=" . $row['cd_userform'] . "'><img src='img/editar.png' alt='Editar'></a></td>";
+                        echo "<td><a href='../editar/editar.php?id=" . $row['cd_userform'] . "'><img src='img/lapis.png' alt='Editar'></a></td>";
                         echo "<td>" . htmlspecialchars($row['cd_userform']) . "</td>";
                         echo "<td>" . htmlspecialchars($row['nome'] . ' ' . $row['sobrenome']) . "</td>";
                         echo "</tr>";
@@ -81,5 +81,18 @@ if (!isset($_SESSION['logado'])) {
     </div>
 
     <script src="menu.js"></script>
+    <script>
+    document.getElementById('searchInput').addEventListener('input', function() {
+        let filtro = this.value.toLowerCase();
+        document.querySelectorAll('.data-table tbody tr').forEach(function(row) {
+            let nome = row.querySelector('td:nth-child(3)');
+            if (nome && nome.textContent.toLowerCase().includes(filtro)) {
+                row.style.display = '';
+            } else {
+                row.style.display = 'none';
+            }
+        });
+    });
+    </script>
 </body>
-</html> 
+</html>
