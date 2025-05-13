@@ -1,9 +1,4 @@
 // Dados de exemplo
-const dadosTabela = [
-    { id: 1, nome: 'João Silva', status: 'Ativo' },
-    { id: 2, nome: 'Maria Santos', status: 'Inativo' },
-    { id: 3, nome: 'Pedro Oliveira', status: 'Ativo' }
-];
 
 // Função para renderizar a tabela
 function renderizarTabela(dados) {
@@ -35,7 +30,7 @@ function buscar(termo) {
 }
 
 inicio.addEventListener('click', () => {
-    window.location.href = '../menu/menu.html';
+    window.location.href = '../menu/menu.php';
 });
 
 
@@ -51,11 +46,11 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     config.addEventListener('click', () => {
-        window.location.href = '../configuracoes/configuracoes.html';
+        window.location.href = '../configuracoes/configuracoes.php';
     });
 
     sair.addEventListener('click', () => {
-        window.location.href = '../login/login.html';
+        window.location.href = '../login/login.php';
     });
     
 });

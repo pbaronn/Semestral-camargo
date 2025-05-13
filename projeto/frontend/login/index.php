@@ -30,7 +30,7 @@
                 <button type="submit" class="btn-entrar">
                     <img src="img/sair.png" alt="Ícone de login" class="icon"> Entrar
                 </button>
-                <a href="../novasenha/senha.html" id="senhaa">Esqueci minha senha</a>
+                <a href="../novasenha/senha.php" id="senhaa">Esqueci minha senha</a>
                 <?php 
                 if(isset($_GET['erro'])) {
                     $erro = $_GET['erro'];

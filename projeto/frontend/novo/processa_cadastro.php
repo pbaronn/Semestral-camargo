@@ -48,6 +48,7 @@ VALUES ('$cduser', '$SN_saude_preexistente', '$SN_lesao_cirurgia', '$SN_restrica
 // Executando a consulta
 if ($conn->query($sql) === TRUE) {
     echo "Novo cadastro realizado com sucesso!";
+    header('location: novo.php');
 } else {
     echo "Erro: " . $sql . "<br>" . $conn->error;
 }

@@ -1,6 +1,7 @@
 <?php
 session_start();
-require_once 'conexao.php';
+include '../../backend/conecta.php';
+$conn = new mysqli($host, $user, $password, $database);
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = trim($_POST['usuario'] ?? '');

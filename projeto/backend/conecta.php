@@ -3,7 +3,7 @@
 $host = "localhost";
 $user = "root";
 $password = "";
-$database = "forcegym";
+$database = "Forcegym";
 
 // Retorna um array com as configurações para ser usado em outros arquivos
 return [

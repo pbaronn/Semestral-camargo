@@ -59,25 +59,25 @@ document.addEventListener('DOMContentLoaded', () => {
     btnSalvar.addEventListener('click', () => {
         // Aqui você adicionaria a validação dos campos e o envio para o backend
         alert('Cadastro salvo com sucesso!');
-        window.location.href = '../menu/menu.html';
+        window.location.href = '../menu/menu.php';
     });
 
     btnCancelar.addEventListener('click', () => {
         if (confirm('Deseja realmente cancelar o cadastro? Todas as informações serão perdidas.')) {
-            window.location.href = '../menu/menu.html';
+            window.location.href = '../menu/menu.php';
         }
     });
 
 
     inicio.addEventListener('click', () => {
-        window.location.href = '../menu/menu.html';
+        window.location.href = '../menu/menu.php';
     });
 
     config.addEventListener('click', () => {
-        window.location.href = '../configuracoes/configuracoes.html';
+        window.location.href = '../configuracoes/configuracoes.php';
     });
 
     sair.addEventListener('click', () => {
-        window.location.href = '../login/login.html';
+        window.location.href = '../login/login.php';
     });
 });
