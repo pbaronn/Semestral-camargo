@@ -1,3 +1,13 @@
+<?php
+session_start();
+if (!isset($_SESSION['logado'])) {
+    header('Location: ../login/index.php');
+    exit;
+}
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -9,21 +19,20 @@
 <body>
     <header class="header">
         <div class="logo-container">
-            <img src="img/logo.png" alt="Logo" class="logo">
             <div class="user-info">
-                Seja bem vindo, @Camargo
+                Seja bem vindo,  <?php echo htmlspecialchars($_SESSION['usuario']); ?>
             </div>
-        </div>
+       
         <nav class="main-nav">
-            <a href="#" class="nav-item" id="inicio"><img src="img/casa.png" alt="Início"> Início</a>
-            <a href="#" class="nav-item" id="config"><img src="img/eng.png" alt="Configurações"> Configurações</a>
-            <a href="#" class="nav-item" id="sair"><img src="img/sair.png" alt="Sair"> Sair</a>
+            <a href="../menu/menu.php" class="nav-item" id="inicio"><img src="img/casa.png" alt="Início"> Início</a>
+            <a href="../configuracoes/configuracoes.php" class="nav-item" id="config"><img src="img/eng.png" alt="Configurações"> Configurações</a>
+            <a href="../login/logout.php" class="nav-item" id="sair"><img src="img/sair.png" alt="Sair"> Sair</a>
         </nav>
+         </div>
     </header>
 
     <div class="mensalidade-container">
         <h1>Mensalidade</h1>
-        
         <div class="form-container">
             <div class="info-section">
                 <div class="form-group">
@@ -58,8 +67,8 @@
             </div>
 
             <div class="content-section">
-                <div class="novo-section">
-                    <h2>Novo</h2>
+                <div class="mensalidade-section">
+                    <h2>Mensalidade</h2>
                     <div class="form-group">
                         <label for="data">Data</label>
                         <input type="text" id="data" class="form-input">

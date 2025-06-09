@@ -1,187 +1,221 @@
-
+<?php
+session_start();
+if (!isset($_SESSION['logado'])) {
+    header('Location: ../login/index.php');
+    exit;
+}
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Novo Cadastro</title>
+    <title>Novo Cadastro - Force Gym</title>
     <link rel="stylesheet" href="novo.css">
 </head>
 <body>
     <header class="header">
         <div class="logo-container">
-            <img src="img/logo.png" alt="Logo" class="logo">
             <div class="user-info">
-                Seja bem vindo, @Camargo
+                Seja bem vindo, <?php echo htmlspecialchars($_SESSION['usuario']); ?>
             </div>
+            <nav class="main-nav">
+                <a href="../menu/menu.php" class="nav-item"><img src="../menu/img/casa.png" alt="Início"> Início</a>
+                <a href="../configuracoes/configuracoes.php" class="nav-item"><img src="../menu/img/eng.png" alt="Configurações"> Configurações</a>
+                <a href="../login/logout.php" class="nav-item"><img src="../menu/img/sair.png" alt="Sair"> Sair</a>
+            </nav>
         </div>
-        <nav class="main-nav">
-            <a href="#" class="nav-item" id="inicio"><img src="img/casa.png" alt="Início"> Início</a>
-            <a href="#" class="nav-item" id="config"><img src="img/eng.png" alt="Configurações"> Configurações</a>
-            <a href="#" class="nav-item" id="sair"><img src="img/sair.png" alt="Sair"> Sair</a>
-        </nav>
     </header>
-    <div class="cadastro-container">
+    <div class="menu-container">
         <h1>Novo Cadastro</h1>
-        
-        <div class="cadastro-form">
-        <form action="processa_cadastro.php" method="post" class="cadastro-form">
+        <form action="processa_novo.php" method="post" class="form-novo">
             <div class="form-group">
-                <label for="nome">Nome</label>
-                <input type="text" id="nome" name="nome" class="form-input">
+                <label for="nome">Nome:</label>
+                <input type="text" name="nome" id="nome" required>
+            </div>
+            <div class="form-group">
+                <label for="sobrenome">Sobrenome:</label>
+                <input type="text" name="sobrenome" id="sobrenome" required>
+            </div>
+            <div class="form-group">
+                <label for="dt_nascimento">Data de Nascimento:</label>
+                <input type="date" name="dt_nascimento" id="dt_nascimento" required>
+            </div>
+            <div class="form-group">
+                <label for="cpf">CPF:</label>
+                <input type="text" name="cpf" id="cpf" required>
+            </div>
+            <div class="form-group">
+                <label for="telefone">Telefone:</label>
+                <input type="text" name="telefone" id="telefone" required>
+            </div>
+            <div class="form-group">
+                <label for="telefone2">Telefone 2:</label>
+                <input type="text" name="telefone2" id="telefone2">
+            </div>
+            <div class="form-group">
+                <label for="endereco">Endereço:</label>
+                <input type="text" name="endereco" id="endereco">
+            </div>
+            <div class="form-group">
+                <label for="email">E-mail:</label>
+                <input type="email" name="email" id="email">
+            </div>
+            <div class="form-group">
+                <label for="DS_objetivo">Objetivo:</label>
+                <input type="text" name="DS_objetivo" id="DS_objetivo">
             </div>
 
+            <!-- Doença preexistente -->
             <div class="form-group">
-                <label for="sobrenome">Sobrenome</label>
-                <input type="text" id="sobrenome" name="sobrenome" class="form-input">
-            </div>
-
-            <div class="form-group">
-                <label for="dataNascimento">Data de nascimento</label>
-                <input type="text" id="dt_nascimento" name="dt_nascimento" class="form-input">
-            </div>
-
-            <div class="form-group">
-                <label for="cpf">CPF</label>
-                <input type="text" id="cpf" name="cpf" class="form-input">
-            </div>
-
-            <div class="form-group">
-                <label for="tel1">Tel.</label>
-                <input type="text" id="telefone" name="telefone" class="form-input">
-            </div>
-
-            <div class="form-group">
-                <label for="tel2">Tel. 2</label>
-                <input type="text" id="telefone2" name="telefone2" class="form-input">
-            </div>
-
-            <div class="form-group">
-                <label for="endereco">Endereço</label>
-                <input type="text" id="endereco" name="endereco" class="form-input">
-            </div>
-
-            <div class="form-group">
-                <label for="email">E-mail</label>
-                <input type="email" id="email" name="email" class="form-input">
-            </div>
-
-            <div class="form-group">
-                <label for="observacoes">Observações</label>
-                <textarea id="observacoes" name="observacoes" class="form-input textarea"></textarea>
-            </div>
-
-            <div class="form-group checkbox-group">
-                <label>Possui alguma condição de saúde pré-existente?</label>
-                <div class="radio-options">
+                <label>Possui alguma doença preexistente?</label>
+                <div class="radio-group">
                     <label class="radio-label">
-                        <input type="radio" name="SN_saude_preexistente" value="nao"> Não
+                        <input type="radio" name="SN_saude_preexistente" value="Sim" id="saudeSim" required> Sim
                     </label>
                     <label class="radio-label">
-                        <input type="radio" name="SN_saude_preexistente" value="sim"> Sim
+                        <input type="radio" name="SN_saude_preexistente" value="Não" id="saudeNao"> Não
                     </label>
                 </div>
-                <input type="text" class="form-input hidden" id="DS_saude_preexistente">
+                <div class="form-group" id="campoSaudeDetalhe" style="display:none; margin-top:10px;">
+                    <label for="DS_saude_preexistente">Se sim, qual?</label>
+                    <input type="text" name="DS_saude_preexistente" id="DS_saude_preexistente">
+                </div>
             </div>
 
-            <div class="form-group checkbox-group">
-                <label>Já teve alguma lesão grave ou cirurgia?</label>
-                <div class="radio-options">
+            <!-- Lesão/cirurgia -->
+            <div class="form-group">
+                <label>Já teve lesão ou fez cirurgia?</label>
+                <div class="radio-group">
                     <label class="radio-label">
-                        <input type="radio" name="SN_lesao_cirurgia" value="nao"> Não
+                        <input type="radio" name="SN_lesao_cirurgia" value="Sim" id="lesaoSim" required> Sim
                     </label>
                     <label class="radio-label">
-                        <input type="radio" name="SN_lesao_cirurgia" value="sim"> Sim
+                        <input type="radio" name="SN_lesao_cirurgia" value="Não" id="lesaoNao"> Não
                     </label>
                 </div>
-                <input type="text" class="form-input hidden" id="DS_lesao_cirurgia">
+                <div class="form-group" id="campoLesaoDetalhe" style="display:none; margin-top:10px;">
+                    <label for="DS_lesao_cirurgia">Se sim, qual?</label>
+                    <input type="text" name="DS_lesao_cirurgia" id="DS_lesao_cirurgia">
+                </div>
             </div>
 
-            <div class="form-group checkbox-group">
-                <label>Possui alguma restrição médica para atividades físicas?</label>
-                <div class="radio-options">
+            <!-- Restrição médica -->
+            <div class="form-group">
+                <label>Possui restrição médica?</label>
+                <div class="radio-group">
                     <label class="radio-label">
-                        <input type="radio" name="SN_restricao_medica" value="nao"> Não
+                        <input type="radio" name="SN_restricao_medica" value="Sim" id="restricaoSim" required> Sim
                     </label>
                     <label class="radio-label">
-                        <input type="radio" name="SN_restricao_medica" value="sim"> Sim
+                        <input type="radio" name="SN_restricao_medica" value="Não" id="restricaoNao"> Não
                     </label>
                 </div>
-                <input type="text" class="form-input hidden" id="restricaoDesc">
+                <div class="form-group" id="campoRestricaoDetalhe" style="display:none; margin-top:10px;">
+                    <label for="DS_restricao_medica">Se sim, qual?</label>
+                    <input type="text" name="DS_restricao_medica" id="DS_restricao_medica">
+                </div>
             </div>
 
-            <div class="form-group checkbox-group">
-                <label>Está fazendo uso de alguma medicação contínua?</label>
-                <div class="radio-options">
+            <!-- Uso de medicação -->
+            <div class="form-group">
+                <label>Faz uso de medicação?</label>
+                <div class="radio-group">
                     <label class="radio-label">
-                        <input type="radio" name="medicacao" value="nao"> Não
+                        <input type="radio" name="SN_uso_medicacao" value="Sim" id="medicacaoSim" required> Sim
                     </label>
                     <label class="radio-label">
-                        <input type="radio" name="medicacao" value="sim"> Sim
+                        <input type="radio" name="SN_uso_medicacao" value="Não" id="medicacaoNao"> Não
                     </label>
                 </div>
-                <input type="text" class="form-input hidden" id="medicacaoDesc">
+                <div class="form-group" id="campoMedicacaoDetalhe" style="display:none; margin-top:10px;">
+                    <label for="DS_uso_medicacao">Se sim, qual?</label>
+                    <input type="text" name="DS_uso_medicacao" id="DS_uso_medicacao">
+                </div>
             </div>
 
-            <div class="form-group checkbox-group">
-                <label>Tem alergia a algum medicamento ou substância?</label>
-                <div class="radio-options">
+            <!-- Alergia a medicamento -->
+            <div class="form-group">
+                <label>Possui alergia a medicamento?</label>
+                <div class="radio-group">
                     <label class="radio-label">
-                        <input type="radio" name="alergia" value="nao"> Não
+                        <input type="radio" name="SN_alergia_medicamento" value="Sim" id="alergiaSim" required> Sim
                     </label>
                     <label class="radio-label">
-                        <input type="radio" name="alergia" value="sim"> Sim
+                        <input type="radio" name="SN_alergia_medicamento" value="Não" id="alergiaNao"> Não
                     </label>
                 </div>
-                <input type="text" class="form-input hidden" id="alergiaDesc">
+                <div class="form-group" id="campoAlergiaDetalhe" style="display:none; margin-top:10px;">
+                    <label for="DS_alergia_medicamento">Se sim, qual?</label>
+                    <input type="text" name="DS_alergia_medicamento" id="DS_alergia_medicamento">
+                </div>
             </div>
 
-            <div class="form-group checkbox-group">
-                <label>Já teve episódios de tontura, desmaios ou problemas cardíacos ao praticar exercícios?</label>
-                <div class="radio-options">
+            <!-- Episódios ao praticar exercícios -->
+            <div class="form-group">
+                <label>Já teve episódios ao praticar exercícios?</label>
+                <div class="radio-group">
                     <label class="radio-label">
-                        <input type="radio" name="episodios" value="nao"> Não
+                        <input type="radio" name="SN_episodios_exercicios" value="Sim" id="episodiosSim" required> Sim
                     </label>
                     <label class="radio-label">
-                        <input type="radio" name="episodios" value="sim"> Sim
+                        <input type="radio" name="SN_episodios_exercicios" value="Não" id="episodiosNao"> Não
                     </label>
                 </div>
-                <input type="text" class="form-input hidden" id="episodiosDesc">
+                <div class="form-group" id="campoEpisodiosDetalhe" style="display:none; margin-top:10px;">
+                    <label for="DS_episodios_exercicios">Se sim, qual?</label>
+                    <input type="text" name="DS_episodios_exercicios" id="DS_episodios_exercicios">
+                </div>
             </div>
 
-            <div class="form-group checkbox-group">
-                <label>Tem autorização médica para a prática de atividades físicas?</label>
-                <div class="radio-options">
+            <!-- Autorização médica -->
+            <div class="form-group">
+                <label>Possui autorização médica para atividade física?</label>
+                <div class="radio-group">
                     <label class="radio-label">
-                        <input type="radio" name="autorizacao" value="nao"> Não
+                        <input type="radio" name="SN_autorizacao_medica_fisica" value="Sim" id="autorizacaoSim" required> Sim
                     </label>
                     <label class="radio-label">
-                        <input type="radio" name="autorizacao" value="sim"> Sim
+                        <input type="radio" name="SN_autorizacao_medica_fisica" value="Não" id="autorizacaoNao"> Não
                     </label>
                 </div>
-                <input type="text" class="form-input hidden" id="autorizacaoDesc">
+                <div class="form-group" id="campoAutorizacaoDetalhe" style="display:none; margin-top:10px;">
+                    <label for="DS_autorizacao_medica_fisica">Se sim, qual?</label>
+                    <input type="text" name="DS_autorizacao_medica_fisica" id="DS_autorizacao_medica_fisica">
+                </div>
             </div>
 
-            <div class="form-group checkbox-group">
-                <label>Está fazendo uso de alguma medicação contínua?</label>
-                <div class="radio-options">
-                    <label class="radio-label">
-                        <input type="radio" name="SN_uso_medicacao" value="nao"> Não
-                    </label>
-                    <label class="radio-label">
-                        <input type="radio" name="SN_uso_medicacao" value="sim"> Sim
-                    </label>
-                </div>
-                <input type="text" class="form-input hidden" id="DS_uso_medicacao">
-            </div>
-            <div class="button-group">
-                <button class="btn-salvar" id="btnSalvar">Salvar</button>
-                <button class="btn-cancelar" id="btnCancelar">Cancelar</button>
+            <div class="form-actions">
+                <button type="submit" class="btn-novo">Salvar</button>
+                <a href="../menu/menu.php" class="btn-voltar">Voltar ao Menu</a>
             </div>
         </form>
-        </div>
     </div>
-
-    <script src="novo.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const campos = [
+            {sim: 'saudeSim', nao: 'saudeNao', campo: 'campoSaudeDetalhe'},
+            {sim: 'lesaoSim', nao: 'lesaoNao', campo: 'campoLesaoDetalhe'},
+            {sim: 'restricaoSim', nao: 'restricaoNao', campo: 'campoRestricaoDetalhe'},
+            {sim: 'medicacaoSim', nao: 'medicacaoNao', campo: 'campoMedicacaoDetalhe'},
+            {sim: 'alergiaSim', nao: 'alergiaNao', campo: 'campoAlergiaDetalhe'},
+            {sim: 'episodiosSim', nao: 'episodiosNao', campo: 'campoEpisodiosDetalhe'},
+            {sim: 'autorizacaoSim', nao: 'autorizacaoNao', campo: 'campoAutorizacaoDetalhe'}
+        ];
+        campos.forEach(function(obj) {
+            const sim = document.getElementById(obj.sim);
+            const nao = document.getElementById(obj.nao);
+            const campo = document.getElementById(obj.campo);
+            if(sim && nao && campo) {
+                sim.addEventListener('change', function() {
+                    campo.style.display = this.checked ? 'block' : 'none';
+                });
+                nao.addEventListener('change', function() {
+                    campo.style.display = 'none';
+                });
+            }
+        });
+    });
+    </script>
 </body>
 </html>

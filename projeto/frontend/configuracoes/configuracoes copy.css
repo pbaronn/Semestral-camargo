@@ -33,6 +33,7 @@ body {
     display: none;
 }
 
+
 .header-right {
     display: flex;
     align-items: center;
@@ -75,6 +76,8 @@ body {
     height: 22px;
 }
 
+
+
 .nav-item:hover {
     background: #232733;
     color: #ffb347;
@@ -90,14 +93,9 @@ body {
     margin-right: 32px;
 }
 
-.main-nav {
-    order: 2;
-    flex: 1;
-    justify-content: center;
-}
 
-.novasenha-container {
-    background: #fff;
+.config-container {
+       background: #fff;
     max-width: 850px;
     margin: 48px auto 0 auto;
     border-radius: 18px;
@@ -106,7 +104,14 @@ body {
     transition: box-shadow 0.3s;
 }
 
-.novasenha-container h1 {
+
+.main-nav {
+    order: 2;
+    flex: 1;
+    justify-content: center;
+}
+
+.config-container h1  {
     margin-top: 0;
     font-size: 2.2rem;
     color: #222;
@@ -116,65 +121,139 @@ body {
     text-shadow: 0 2px 8px rgba(0,0,0,0.04);
 }
 
-.form-container {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+.config-form {
+    background: #f9fafb;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
 }
 
-.form-group {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
+.config-form .form-group {
+    margin-bottom: 1.5rem;
 }
 
-.form-group label {
-    font-size: 1rem;
+.config-form label {
+    display: block;
+    margin-bottom: 0.3rem;
     font-weight: 500;
     color: #222;
 }
 
-.form-input {
+.config-form .form-input {
+    width: 100%;
     padding: 10px 16px;
     border: 1px solid #d1d5db;
     border-radius: 6px;
     font-size: 1rem;
-    background: #f9fafb;
+    background: #fff;
     transition: border 0.2s;
 }
 
-.form-input:focus {
+.config-form .form-input:focus {
     border: 1.5px solid #ffb347;
     outline: none;
 }
 
-.button-group {
-    display: flex;
-    gap: 18px;
-    margin-top: 20px;
+.config-form .form-input:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
 }
 
-.btn-salvar, .btn-cancelar {
+.senha-section {
+    margin: 2rem 0;
+}
+
+.btn-mudar-senha {
+    background: none;
+    border: none;
+    color: #181c24;
+    text-decoration: underline;
+    cursor: pointer;
+    padding: 0;
+    font-size: 0.98rem;
+    font-weight: 600;
+    transition: color 0.2s;
+}
+
+.btn-mudar-senha:hover {
+    color: #ffb347;
+}
+
+.campos-senha {
+    margin-top: 1.5rem;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    opacity: 1;
+}
+
+.campos-senha.hidden {
+    opacity: 0;
+    height: 0;
+    margin: 0;
+}
+
+.button-group {
     display: flex;
-    align-items: center;
-    gap: 8px;
-    background: #181c24 !important;
-    color: #fff !important;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.btn-salvar,
+.btn-cancelar,
+.btn-voltar {
+    padding: 12px 28px;
     border: none;
     border-radius: 8px;
-    padding: 12px 28px;
     font-size: 1.05rem;
     font-weight: 600;
     cursor: pointer;
-    text-decoration: none;
     box-shadow: 0 2px 12px rgba(0,0,0,0.08);
     transition: background 0.2s, color 0.2s, box-shadow 0.2s, transform 0.2s;
 }
 
-.btn-salvar:hover, .btn-cancelar:hover {
-    background: #232733 !important;
-    color: #ffb347 !important;
+.btn-salvar {
+    background: #181c24;
+    color: #fff;
+}
+
+.btn-salvar:hover {
+    background: #232733;
+    color: #ffb347;
     box-shadow: 0 6px 24px rgba(24,28,36,0.13);
     transform: translateY(-2px) scale(1.03);
 }
-  
+
+.btn-cancelar,
+.btn-voltar {
+    background: #f0f0f0;
+    color: #181c24;
+}
+
+.btn-cancelar:hover,
+.btn-voltar:hover {
+    background: #ffb347;
+    color: #fff;
+}
+
+@media (max-width: 900px) {
+    .config-container {
+        padding: 18px 6px;
+    }
+     .logo-container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    .main-nav {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
+    }
+    .config-form {
+        padding: 1rem;
+    }
+    .action-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+}

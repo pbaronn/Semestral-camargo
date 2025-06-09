@@ -60,19 +60,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Handler do botão Voltar
     btnVoltar.addEventListener('click', () => {
-        window.location.href = '../menu/menu.html';
+        window.location.href = '../menu/menu.php';
     });
 
 
     inicio.addEventListener('click', () => {
-        window.location.href = '../menu/menu.html';
+        window.location.href = '../menu/menu.php';
     });
 
     config.addEventListener('click', () => {
-        window.location.href = '../configuracoes/configuracoes.html';
+        window.location.href = '../configuracoes/configuracoes.php';
     });
 
     sair.addEventListener('click', () => {
-        window.location.href = '../login/login.html';
+        window.location.href = '../login/login.php';
     });
 });

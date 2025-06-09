@@ -16,16 +16,15 @@ if (!isset($_SESSION['logado'])) {
 <body>
     <header class="header">
         <div class="logo-container">
-            <img src="img/logo.png" alt="Logo" class="logo">
             <div class="user-info">
                 Seja bem vindo, <?php echo htmlspecialchars($_SESSION['usuario']); ?>
             </div>
+            <nav class="main-nav">
+                <a href="menu.php" class="nav-item"><img src="img/casa.png" alt="Início"> Início</a>
+                <a href="../configuracoes/configuracoes.php" class="nav-item"><img src="img/eng.png" alt="Configurações"> Configurações</a>
+                <a href="../login/logout.php" class="nav-item"><img src="img/sair.png" alt="Sair"> Sair</a>
+            </nav>
         </div>
-        <nav class="main-nav">
-            <a href="menu.php" class="nav-item"><img src="img/casa.png" alt="Início"> Início</a>
-            <a href="../configuracoes/configuracoes.php" class="nav-item" id="config"><img src="img/eng.png" alt="Configurações"> Configurações</a>
-            <a href="../login/logout.php" class="nav-item" id="sair"><img src="img/sair.png" alt="Sair"> Sair</a>
-        </nav>
     </header>
 
     <div class="menu-container">
@@ -53,8 +52,8 @@ if (!isset($_SESSION['logado'])) {
             <thead>
                 <tr>
                     <th>Editar</th>
+                    <th>Código</th>
                     <th>Nome</th>
-                    <th>Status</th>
                 </tr>
             </thead>
             <tbody>

@@ -74,15 +74,5 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    inicio.addEventListener('click', () => {
-        window.location.href = '../menu/menu.html';
-    });
-
-    config.addEventListener('click', () => {
-        window.location.href = '../configuracoes/configuracoes.html';
-    });
-
-    sair.addEventListener('click', () => {
-        window.location.href = '../login/login.html';
-    });
+  
 });

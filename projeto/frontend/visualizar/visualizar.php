@@ -1,28 +1,39 @@
+<?php
+session_start();
+if (!isset($_SESSION['logado'])) {
+    header('Location: ../login/index.php');
+    exit;
+}
+?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Editar Cadastro</title>
-    <link rel="stylesheet" href="editar.css">
+    <title>Visualizar Cadastro</title>
+    <link rel="stylesheet" href="visualizar.css">
 </head>
 <body>
     <header class="header">
         <div class="logo-container">
-            <img src="img/logo.png" alt="Logo" class="logo">
             <div class="user-info">
-                Seja bem vindo, @Camargo
+                Seja bem vindo,<?php echo htmlspecialchars($_SESSION['usuario']); ?>
             </div>
-        </div>
+        
         <nav class="main-nav">
-            <a href="#" class="nav-item" id="inicio"><img src="img/casa.png" alt="Início"> Início</a>
-            <a href="#" class="nav-item" id="config"><img src="img/eng.png" alt="Configurações"> Configurações</a>
-            <a href="#" class="nav-item" id="sair"><img src="img/sair.png" alt="Sair"> Sair</a>
+            <a href="../menu/menu.php" class="nav-item" id="inicio"><img src="img/casa.png" alt="Início"> Início</a>
+            <a href="../configuracoes/configuracoes.php" class="nav-item" id="config"><img src="img/eng.png" alt="Configurações"> Configurações</a>
+            <a href="../login/logout.php" class="nav-item" id="sair"><img src="img/sair.png" alt="Sair"> Sair</a>
         </nav>
+        </div>
     </header>
 
     <div class="cadastro-container">
-        <h1>Editar Cadastro</h1>
+        <h1>Visualizar Cadastro</h1>
         
         <div class="cadastro-form">
             <div class="form-group">
@@ -176,12 +187,10 @@
 
             <div class="button-group">
                 <button class="btn-voltar" id="btnvoltar">Voltar</button>
-                <button class="btn-cancelar" id="btnCancelar">Cancelar</button>
-                <button class="btn-apagar" id="btnapagar">Apagar Cadastro</button>
             </div>
         </div>
     </div>
 
-    <script src="editar.js"></script>
+    <script src="visualizar.js"></script>
 </body>
 </html>

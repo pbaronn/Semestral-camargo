@@ -6,23 +6,27 @@
 }
 
 body {
-    background-color: #c7c7c7;
-    min-height: 100vh;
+    background: #f4f6f8;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    color: #222;
+    margin: 0;
+    padding: 0;
 }
 
 .header {
-    background-color: #000000;
-    color: white;
-    padding: 1rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    background: #181c24;
+    color: #fff;
+    padding: 10px 0;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.10);
 }
 
 .logo-container {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    justify-content: space-between;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 32px;
 }
 
 .logo {
@@ -32,28 +36,121 @@ body {
 }
 
 .user-info {
-    color: d8d6d6;
-    font-size: 0.9rem;
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    background: #232733;
+    padding: 6px 16px;
+    border-radius: 16px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    margin-right: 24px;
 }
 
 .main-nav {
     display: flex;
-    gap: 2rem;
+    gap: 32px;
     align-items: center;
+    justify-content: center;
+    flex: 1;
 }
 
 .nav-item {
-    color: white;
+    color: #fff;
     text-decoration: none;
+    font-size: 0.98rem;
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 5px;
+    padding: 5px 10px;
+    border-radius: 8px;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
 }
 
-
 .nav-item img {
-    width: 20px;
-    height: 20px;
+    width: 22px;
+    height: 22px;
+}
+
+.nav-item:hover {
+    background: #232733;
+    color: #ffb347;
+    box-shadow: 0 2px 8px rgba(255,179,71,0.10);
+}
+
+.menu-container {
+    background: #fff;
+    max-width: 900px;
+    margin: 48px auto 0 auto;
+    border-radius: 18px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.13);
+    padding: 44px 36px 36px 36px;
+    transition: box-shadow 0.3s;
+}
+
+.menu-container h1 {
+    margin-top: 0;
+    font-size: 2rem;
+    color: #222;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 28px;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.form-novo {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.form-group label {
+    font-weight: 500;
+    margin-bottom: 6px;
+    display: block;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 1rem;
+    background: #f9fafb;
+    transition: border 0.2s;
+}
+
+.form-group input:focus {
+    border: 1.5px solid #ffb347;
+    outline: none;
+}
+
+.form-actions {
+    display: flex;
+    gap: 16px;
+    margin-top: 10px;
+}
+
+.btn-novo, .btn-voltar {
+    background: #181c24;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 22px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s, transform 0.2s;
+    display: inline-block;
+    text-align: center;
+}
+
+.btn-novo:hover, .btn-voltar:hover {
+    background: #232733;
+    color: #ffb347;
+    box-shadow: 0 6px 24px rgba(24,28,36,0.13);
+    transform: translateY(-2px) scale(1.03);
 }
 
 .cadastro-container {
@@ -61,7 +158,6 @@ body {
     margin: 1rem auto;
     padding: 1rem;
 }
-
 
 .cadastro-form {
     background-color: #d8d6d6;
@@ -87,53 +183,26 @@ body {
     color: #222;
     line-height: 1.4;
 }
-.radio-options {
+
+.radio-group {
     display: flex;
-    gap: 2rem;
-    margin: 0.8rem 0;
-    padding-left: 1rem;
+    gap: 24px;
+    margin-top: 8px;
 }
 
 .radio-label {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
-    font-size: 0.95rem;
+    gap: 6px;
+    font-size: 1rem;
     cursor: pointer;
-    user-select: none;
 }
 
-/* Estilização personalizada para radio buttons */
 .radio-label input[type="radio"] {
-    appearance: none;
-    -webkit-appearance: none;
+    accent-color: #181c24;
     width: 18px;
     height: 18px;
-    border: 2px solid #000000;
-    border-radius: 50%;
-    outline: none;
-    margin: 0;
-    position: relative;
-    cursor: pointer;
 }
-
-.radio-label input[type="radio"]:checked {
-    border-color: #000;
-}
-
-.radio-label input[type="radio"]:checked::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 10px;
-    height: 10px;
-    background-color: #000;
-    border-radius: 50%;
-}
-
-
 
 .form-input.hidden {
     display: none;
@@ -144,7 +213,6 @@ body {
     border: 1px solid #424242;
     border-radius: 4px;
     background-color: rgba(255, 255, 255, 0.5);
-
 }
 
 .form-input.textarea {
@@ -154,8 +222,7 @@ body {
     border: 1px solid #000000;
     border-radius: 4px;
     background-color: rgba(31, 30, 30, 0.5);
-} 
-
+}
 
 .button-group {
     display: flex;
@@ -225,8 +292,6 @@ body {
     border-bottom-color: #000;
 }
 
-
-
 .cadastro-container h1 {
     font-size: 1.5rem;
     margin-bottom: 1rem;
@@ -241,9 +306,6 @@ body {
 .form-section:last-child {
     border-bottom: none;
 }
-
-
-
 
 @keyframes shake {
     0%, 100% { transform: translateX(0); }
@@ -265,7 +327,6 @@ button:disabled {
     transition: all 0.3s ease-in-out;
 }
 
-
 .form-input.hidden {
     max-height: 0;
     opacity: 0;
@@ -281,7 +342,6 @@ button:disabled {
     padding: 8px;
 }
 
-
 @media (prefers-reduced-motion: reduce) {
     * {
         animation: none !important;
@@ -294,8 +354,6 @@ button:disabled {
     border-color: #000000;
     background-color: #d8d6d6;
 }
-
-
 
 .form-input:focus::placeholder {
     opacity: 0.5;

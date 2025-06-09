@@ -6,46 +6,88 @@
 }
 
 body {
-    background-color: #c7c7c7;
+    background: #f4f6f8;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    color: #222;
+    margin: 0;
+    padding: 0;
 }
 
 .header {
-    background-color: #000000;
-    color: white;
-    padding: 1rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    background: #181c24;
+    color: #fff;
+    padding: 10px 0;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.10);
 }
 
 .logo-container {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    justify-content: space-between;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 32px;
 }
 
+
 .logo {
-    width: 75px;
-    height: 65px;
-    border-radius: 20%;
+    display: none;
 }
+
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.user-info {
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    background: #232733;
+    padding: 6px 16px;
+    border-radius: 16px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    margin-right: 24px;
+}
+
 
 .main-nav {
     display: flex;
-    gap: 2rem;
+    gap: 32px;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
 }
 
 .nav-item {
-    color: white;
+    color: #fff;
     text-decoration: none;
+    font-size: 0.98rem;
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 5px;
+    padding: 5px 10px;
+    border-radius: 8px;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
 }
 
+
 .nav-item img {
-    width: 20px;
-    height: 20px;
+    width: 22px;
+    height: 22px;
+}
+
+.nav-item:hover {
+    background: #232733;
+    color: #ffb347;
+    box-shadow: 0 2px 8px rgba(255,179,71,0.10);
+}
+
+
+.logo-container {
+    justify-content: flex-start;
 }
 
 .menu-container {
@@ -66,69 +108,191 @@ body {
     max-width: 600px;
 }
 
-#searchInput {
-    flex: 1;
-    padding: 0.3rem 0.5rem;
-    border: 1px solid #000000;
-    border-radius: 50px;
-    height: 30px;
-    font-size: 0.9rem;
+.mensalidade-container {
+    background: #fff;
+    max-width: 850px;
+    margin: 48px auto 0 auto;
+    border-radius: 18px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.13);
+    padding: 44px 36px 36px 36px;
+    transition: box-shadow 0.3s;
 }
 
-.search-button {
-    padding: 0.3rem 0.8rem;
-    background: white;
-    border: 1px solid #000000;
-    border-radius: 50px;
-    cursor: pointer;
-    height: 30px;
+.mensalidade-container h1 {
+    margin-top: 0;
+    font-size: 2.2rem;
+    color: #222;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 28px;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.04);
 }
 
-.search-button img {
-    width: 16px;
-    height: 16px;
+.form-container {
+    background: #f9fafb;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
 }
 
-
-.data-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 1rem;
-    background-color: white;
+.info-section {
+    margin-bottom: 2rem;
 }
 
-.data-table th,
-.data-table td {
-    padding: 1rem;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
+.form-group {
+    margin-bottom: 1.5rem;
 }
 
-.data-table th {
-    background-color: #000;
-    color: white;
-}
-
-.data-table tbody tr:hover {
-    background-color: #615f5f;
-}
-
-.btn-editar {
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.btn-editar:hover {
-    opacity: 0.8;
-}
-
-.btn-editar img {
-    width: 30px;
-    height: 30px;
+.form-group label {
     display: block;
+    margin-bottom: 0.3rem;
+    font-weight: 500;
+    color: #222;
+}
+
+.form-input {
+    width: 100%;
+    padding: 10px 16px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 1rem;
+    background: #fff;
+    transition: border 0.2s;
+}
+
+.form-input:focus {
+    border: 1.5px solid #ffb347;
+    outline: none;
+}
+
+.button-group {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.btn-buscar {
+    padding: 12px 28px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.05rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s, transform 0.2s;
+}
+
+.btn-buscar {
+    background: #181c24;
+    color: #fff;
+}
+
+.btn-buscar:hover {
+    background: #232733;
+    color: #ffb347;
+    box-shadow: 0 6px 24px rgba(24,28,36,0.13);
+    transform: translateY(-2px) scale(1.03);
+}
+
+
+
+.novo-section h2 {
+    margin-bottom: 2rem;
+    font-size: 1.2rem;
+    color: #222;
+    font-weight: 600;
+}
+
+.historico-section h2 {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    color: #222;
+    font-weight: 600;
+}
+
+.historico-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.historico-item {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #d1d5db;
+    padding-bottom: 0.5rem;
+}
+
+.historico-item .data,
+.historico-item .valor {
+    flex: 1;
+}
+
+.vencimento-section {
+    background: #f9fafb;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+}
+
+.vencimento-title {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: #222;
+}
+
+.vencimento-content {
+    display: flex;
+    gap: 1rem;
+}
+
+.select-vencimento {
+    padding: 10px 16px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 1rem;
+    background: #fff;
+    transition: border 0.2s;
+}
+
+.select-vencimento:focus {
+    border: 1.5px solid #ffb347;
+    outline: none;
+}
+
+.btn-alterar-vencimento {
+    padding: 12px 28px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.05rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s, transform 0.2s;
+    background: #181c24;
+    color: #fff;
+}
+
+.btn-alterar-vencimento:hover {
+    background: #232733;
+    color: #ffb347;
+    box-shadow: 0 6px 24px rgba(24,28,36,0.13);
+    transform: translateY(-2px) scale(1.03);
+}
+
+@media (max-width: 900px) {
+    .mensalidade-container {
+        padding: 18px 6px;
+    }
+    .logo-container {
+        padding: 0 8px;
+    }
+    .main-nav {
+        gap: 12px;
+    }
+    .form-container {
+        padding: 1rem;
+    }
 } 

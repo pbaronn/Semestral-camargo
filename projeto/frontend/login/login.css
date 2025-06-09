@@ -15,7 +15,7 @@
 /* Configuração da seção esquerda (logo e nome da academia) */
 .left {
     width: 50%;
-    background: #000000;
+    background: #181c24;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -31,7 +31,7 @@
 /* Configuração da seção direita (formulário de login) */
 .right {
     width: 50%;
-    background: #000000;
+    background: #181c24;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -120,4 +120,84 @@ input#senha:-webkit-autofill {
     background-color: gray !important;
     -webkit-box-shadow: 0 0 0 1000px gray inset; /* Força o fundo cinza */
     box-shadow: 0 0 0 1000px gray inset;
+}
+
+.menu-container {
+    background: #fff;
+    max-width: 900px;
+    margin: 40px auto 0 auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    padding: 40px 30px 30px 30px;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+    gap: 10px;
+}
+
+#searchInput {
+    flex: 1;
+    max-width: 350px;
+    padding: 10px 16px;
+    border: 1px solid #d1d5db;
+    border-radius: 20px;
+    font-size: 1rem;
+    background: #f9fafb;
+    transition: border 0.2s;
+}
+
+.search-button {
+    background: #fff;
+    border: 1px solid #d1d5db;
+    border-radius: 50%;
+    padding: 8px 14px;
+    cursor: pointer;
+    transition: background 0.2s;
+    display: flex;
+    align-items: center;
+}
+
+.search-button img {
+    width: 20px;
+    height: 20px;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.data-table th, .data-table td {
+    padding: 14px 10px;
+    text-align: left;
+}
+
+.data-table th {
+    background: #000;
+    color: #fff;
+    font-weight: 600;
+    border-bottom: 2px solid #e5e7eb;
+}
+
+.data-table tr {
+    border-bottom: 1px solid #e5e7eb;
+    transition: background 0.2s;
+}
+
+.data-table tr:hover {
+    background: #f9fafb;
+}
+
+.data-table td img {
+    width: 22px;
+    height: 22px;
 }
