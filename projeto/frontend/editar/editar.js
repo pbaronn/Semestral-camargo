@@ -1,9 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Formata campos especiais
-    const dataNascimento = document.getElementById('dataNascimento');
+    const dataNascimento = document.getElementById('dt_nascimento');
     const cpf = document.getElementById('cpf');
-    const tel1 = document.getElementById('tel1');
-    const tel2 = document.getElementById('tel2');
+    const tel1 = document.getElementById('telefone');
+    const tel2 = document.getElementById('telefone2');
 
     // Formatação de data
     dataNascimento.addEventListener('input', (e) => {
@@ -59,20 +59,19 @@ document.addEventListener('DOMContentLoaded', () => {
     btnSalvar.addEventListener('click', () => {
         // Aqui você adicionaria a validação dos campos e o envio para o backend
         alert('Cadastro salvo com sucesso!');
-        window.location.href = 'index.html';
+        window.location.href = 'index.php';
     });
 
     btnCancelar.addEventListener('click', () => {
         if (confirm('Deseja realmente cancelar? Todas as alterações serão perdidas.')) {
-            window.location.href = 'index.html';
+            window.location.href = 'index.php';
         }
     });
 
     btnapagar.addEventListener('click', () => {
         if (confirm('Deseja realmente apagar o cadastro? Todas as informações serão perdidas.')) {
-            window.location.href = 'index.html';
+            window.location.href = 'index.php';
         }
     });
 
-  
 });

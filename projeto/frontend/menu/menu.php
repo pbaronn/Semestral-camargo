@@ -58,15 +58,16 @@ if (!isset($_SESSION['logado'])) {
             </thead>
             <tbody>
                 <?php
-                require_once '../login/conexao.php';
-                
+                require_once '../../backend/conecta.php';
+                $conn = new mysqli($host, $user, $password, $database);
+
                 $sql = "SELECT cd_userform, nome, sobrenome FROM user_form ORDER BY nome";
                 $result = $conn->query($sql);
                 
                 if ($result && $result->num_rows > 0) {
                     while($row = $result->fetch_assoc()) {
                         echo "<tr>";
-                        echo "<td><a href='../editar/editar.php?id=" . $row['cd_userform'] . "'><img src='img/editar.png' alt='Editar'></a></td>";
+                        echo "<td><a href='../editar/editar.php?id=" . $row['cd_userform'] . "'><img src='img/lapis.png' alt='Editar'></a></td>";
                         echo "<td>" . htmlspecialchars($row['cd_userform']) . "</td>";
                         echo "<td>" . htmlspecialchars($row['nome'] . ' ' . $row['sobrenome']) . "</td>";
                         echo "</tr>";
@@ -80,5 +81,18 @@ if (!isset($_SESSION['logado'])) {
     </div>
 
     <script src="menu.js"></script>
+    <script>
+    document.getElementById('searchInput').addEventListener('input', function() {
+        let filtro = this.value.toLowerCase();
+        document.querySelectorAll('.data-table tbody tr').forEach(function(row) {
+            let nome = row.querySelector('td:nth-child(3)');
+            if (nome && nome.textContent.toLowerCase().includes(filtro)) {
+                row.style.display = '';
+            } else {
+                row.style.display = 'none';
+            }
+        });
+    });
+    </script>
 </body>
-</html> 
+</html>

@@ -1,3 +1,4 @@
+
 document.addEventListener('DOMContentLoaded', () => {
     // Dados de exemplo do usuário
     const dadosUsuario = {
@@ -91,10 +92,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     config.addEventListener('click', () => {
-        window.location.href = '../configuracoes/configuracoes.html';
+        window.location.href = '../configuracoes/configuracoes.php';
     });
 
     sair.addEventListener('click', () => {
-        window.location.href = '../login/login.html';
+        window.location.href = '../login/login.php';
     });
 }); 
