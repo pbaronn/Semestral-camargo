@@ -57,20 +57,20 @@ document.addEventListener('DOMContentLoaded', () => {
    
 
     btnvoltar.addEventListener('click', () => {
-        window.location.href = '../menu/menu.php';
+        window.location.href = '../menu/menu.html';
     });
 
     
 
     inicio.addEventListener('click', () => {
-        window.location.href = '../menu/menu.php';
+        window.location.href = '../menu/menu.html';
     });
 
     config.addEventListener('click', () => {
-        window.location.href = '../configuracoes/configuracoes.php';
+        window.location.href = '../configuracoes/configuracoes.html';
     });
 
     sair.addEventListener('click', () => {
-        window.location.href = '../login/login.php';
+        window.location.href = '../login/login.html';
     });
 });

@@ -1,42 +1,36 @@
 <?php
-<<<<<<< HEAD
 session_start();
+
 if (!isset($_SESSION['logado'])) {
     header('Location: ../login/index.php');
     exit;
 }
-?>
 
+require '../../backend/conexao.php';
 
+// Captura o ID passado via GET
+$id = isset($_GET['id']) ? intval($_GET['id']) : 0;
 
-
-=======
-include '../../backend/conecta.php';
-
-$conn = new mysqli($host, $user, $password, $database);
-
-// Verificar se a conexão foi bem-sucedida
-if ($conn->connect_error) {
-    die("Conexão falhou: " . $conn->connect_error);
+if ($id <= 0) {
+    echo "ID inválido ou não informado.";
+    exit;
 }
 
-// Supondo que você tenha o ID do usuário ou algo para identificar o cadastro
-$cduser = 1; // Substitua por uma variável dinâmica (por exemplo, $_SESSION['user_id'] ou um parâmetro GET)
+// Consulta na tabela user_form
+$sql = "SELECT * FROM user_form WHERE cd_userform = ?";
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("i", $id);
+$stmt->execute();
+$result = $stmt->get_result();
 
-$sql = "SELECT * FROM user_form WHERE cduser = $cduser";
-$result = $conn->query($sql);
-
-if ($result->num_rows > 0) {
-    // Buscar os dados do usuário
-    $row = $result->fetch_assoc();
-} else {
-    echo "Nenhum registro encontrado.";
+if ($result->num_rows === 0) {
+    echo "Cadastro não encontrado.";
+    exit;
 }
 
-$conn->close();
+$row = $result->fetch_assoc();
 ?>
 
->>>>>>> ef75c40ebfecf8f6c14a2c090dff1485f9997f30
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -49,21 +43,20 @@ $conn->close();
     <header class="header">
         <div class="logo-container">
             <div class="user-info">
-                Seja bem vindo, <?php echo htmlspecialchars($_SESSION['usuario']); ?>
+                Seja bem-vindo, <?php echo htmlspecialchars($_SESSION['usuario']); ?>
             </div>
-        
-        <nav class="main-nav">
-            <a href="../menu/menu.php" class="nav-item" id="inicio"><img src="img/casa.png" alt="Início"> Início</a>
-            <a href="#" class="nav-item" id="config"><img src="img/eng.png" alt="Configurações"> Configurações</a>
-            <a href="#" class="nav-item" id="sair"><img src="img/sair.png" alt="Sair"> Sair</a>
-        </nav>
+            <nav class="main-nav">
+                <a href="../menu/menu.php" class="nav-item" id="inicio"><img src="img/casa.png" alt="Início"> Início</a>
+                <a href="#" class="nav-item" id="config"><img src="img/eng.png" alt="Configurações"> Configurações</a>
+                <a href="#" class="nav-item" id="sair"><img src="img/sair.png" alt="Sair"> Sair</a>
+            </nav>
         </div>
     </header>
+
     <div class="cadastro-container">
         <h1>Editar Cadastro</h1>
         
         <div class="cadastro-form">
-        <form action="atualiza_cadastro.php" method="post" class="cadastro-form">
             <div class="form-group">
                 <label for="nome">Nome</label>
                 <input type="text" id="nome" name="nome" class="form-input"  value="<?php echo $row['nome']; ?>">
@@ -105,8 +98,8 @@ $conn->close();
             </div>
 
             <div class="form-group">
-                <label for="OBS">Observações</label>
-                <textarea id="OBS" name="OBS" class="form-input textarea"value="<?php echo $row['OBS']; ?>"></textarea>
+                <label for="obs">Observações</label>
+                <textarea id="obs" name="obs" class="form-input textarea"><?php echo htmlspecialchars($row['obs']); ?></textarea>
             </div>
 
             <div class="form-group checkbox-group">
@@ -200,11 +193,12 @@ $conn->close();
                 <input type="text" class="form-input hidden" id="DS_autorizacao_medica_fisica" name="DS_autorizacao_medica_fisica" value="<?php echo $row['DS_autorizacao_medica_fisica']; ?>">
             </div>
             <div class="button-group">
-                <button class="btn-salvar" id="btnSalvar">Salvar</button>
+                <button class="btn-voltar" id="btnvoltar">Voltar</button>
                 <button class="btn-cancelar" id="btnCancelar">Cancelar</button>
+                <button class="btn-apagar" id="btnapagar">Apagar Cadastro</button>
             </div>
-        </form>
         </div>
+    </div>
     </div>
 
     <script src="editar.js"></script>

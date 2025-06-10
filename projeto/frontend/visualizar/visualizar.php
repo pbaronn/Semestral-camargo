@@ -1,14 +1,3 @@
-<?php
-session_start();
-if (!isset($_SESSION['logado'])) {
-    header('Location: ../login/index.php');
-    exit;
-}
-?>
-
-
-
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -19,17 +8,15 @@ if (!isset($_SESSION['logado'])) {
 </head>
 <body>
     <header class="header">
-        <div class="logo-container">
             <div class="user-info">
-                Seja bem vindo,<?php echo htmlspecialchars($_SESSION['usuario']); ?>
+                Seja bem vindo, @Camargo
             </div>
-        
+        </div>
         <nav class="main-nav">
             <a href="../menu/menu.php" class="nav-item" id="inicio"><img src="img/casa.png" alt="Início"> Início</a>
             <a href="../configuracoes/configuracoes.php" class="nav-item" id="config"><img src="img/eng.png" alt="Configurações"> Configurações</a>
             <a href="../login/logout.php" class="nav-item" id="sair"><img src="img/sair.png" alt="Sair"> Sair</a>
         </nav>
-        </div>
     </header>
 
     <div class="cadastro-container">

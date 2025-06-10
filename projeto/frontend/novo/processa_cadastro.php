@@ -10,6 +10,7 @@ $endereco = $_POST['endereco'];
 $email = $_POST['email'];
 
 // Verificando os campos do formulário
+$obs = isset($_POST['obs']) ? $_POST['obs'] : null;
 $SN_saude_preexistente = isset($_POST['SN_saude_preexistente']) ? $_POST['SN_saude_preexistente'] : null;
 $SN_lesao_cirurgia = isset($_POST['SN_lesao_cirurgia']) ? $_POST['SN_lesao_cirurgia'] : null;
 $SN_restricao_medica = isset($_POST['SN_restricao_medica']) ? $_POST['SN_restricao_medica'] : null;
@@ -39,16 +40,15 @@ if ($conn->connect_error) {
 }
 
 // Definindo um valor fixo para 'cduser' (ajustar conforme necessário)
-$cduser = 1; // Ajuste aqui conforme o sistema real de login
+// $cduser = 1; // Ajuste aqui conforme o sistema real de login
 
 // Preparando o SQL para inserir os dados
-$sql = "INSERT INTO user_form (cduser, SN_saude_preexistente, SN_lesao_cirurgia, SN_restricao_medica, SN_uso_medicacao, SN_alergia_medicamento, SN_episodios_exercicios, SN_autorizacao_medica_fisica, DS_saude_preexistente, DS_lesao_cirurgia, DS_restricao_medica, DS_uso_medicacao, DS_alergia_medicamento, DS_episodios_exercicios, DS_autorizacao_medica_fisica, nome, sobrenome, dt_nascimento, cpf, telefone, telefone2, endereco, email)
-VALUES ('$cduser', '$SN_saude_preexistente', '$SN_lesao_cirurgia', '$SN_restricao_medica', '$SN_uso_medicacao', '$SN_alergia_medicamento', '$SN_episodios_exercicios', '$SN_autorizacao_medica_fisica', '$DS_saude_preexistente', '$DS_lesao_cirurgia', '$DS_restricao_medica', '$DS_uso_medicacao', '$DS_alergia_medicamento', '$DS_episodios_exercicios', '$DS_autorizacao_medica_fisica', '$nome', '$sobrenome', '$dt_nascimento', '$cpf', '$telefone', '$telefone2', '$endereco', '$email')";
+$sql = "INSERT INTO user_form (obs,SN_saude_preexistente, SN_lesao_cirurgia, SN_restricao_medica, SN_uso_medicacao, SN_alergia_medicamento, SN_episodios_exercicios, SN_autorizacao_medica_fisica, DS_saude_preexistente, DS_lesao_cirurgia, DS_restricao_medica, DS_uso_medicacao, DS_alergia_medicamento, DS_episodios_exercicios, DS_autorizacao_medica_fisica, nome, sobrenome, dt_nascimento, cpf, telefone, telefone2, endereco, email)
+VALUES ('$obs','$SN_saude_preexistente', '$SN_lesao_cirurgia', '$SN_restricao_medica', '$SN_uso_medicacao', '$SN_alergia_medicamento', '$SN_episodios_exercicios', '$SN_autorizacao_medica_fisica', '$DS_saude_preexistente', '$DS_lesao_cirurgia', '$DS_restricao_medica', '$DS_uso_medicacao', '$DS_alergia_medicamento', '$DS_episodios_exercicios', '$DS_autorizacao_medica_fisica', '$nome', '$sobrenome', '$dt_nascimento', '$cpf', '$telefone', '$telefone2', '$endereco', '$email')";
 
 // Executando a consulta
 if ($conn->query($sql) === TRUE) {
     echo "Novo cadastro realizado com sucesso!";
-    header('location: novo.php');
 } else {
     echo "Erro: " . $sql . "<br>" . $conn->error;
 }

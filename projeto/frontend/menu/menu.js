@@ -42,19 +42,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     config.addEventListener('click', () => {
-        window.location.href = '../configuracoes/configuracoes.php';
+        window.location.href = '../configuracoes/configuracoes.html';
     });
 
     sair.addEventListener('click', () => {
-        window.location.href = '../login/login.php';
+        window.location.href = '../login/login.html';
     });
 
     mensalidade.addEventListener('click', () => {
-        window.location.href = '../mensalidade/mensalidade.php';
+        window.location.href = '../mensalidade/mensalidade.html';
     });
 
     novo.addEventListener('click', () => {
-        window.location.href = '../novo/novo.php';
+        window.location.href = '../novo/novo.html';
     });
 });
 

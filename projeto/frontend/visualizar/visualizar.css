@@ -13,12 +13,14 @@ body {
     padding: 0;
 }
 
+
 .header {
     background: #181c24;
     color: #fff;
     padding: 10px 0;
     box-shadow: 0 4px 24px rgba(0,0,0,0.10);
 }
+
 
 .logo-container {
     display: flex;
@@ -31,12 +33,6 @@ body {
 
 .logo {
     display: none;
-}
-
-.header-right {
-    display: flex;
-    align-items: center;
-    gap: 24px;
 }
 
 .user-info {
@@ -57,7 +53,6 @@ body {
     justify-content: center;
     flex: 1;
 }
-
 
 .nav-item {
     color: #fff;

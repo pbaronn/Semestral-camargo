@@ -1,13 +1,12 @@
 <?php
 session_start();
-include '../../backend/conecta.php';
-$conn = new mysqli($host, $user, $password, $database);
+require_once 'conexao.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = trim($_POST['usuario'] ?? '');
     $senha = trim($_POST['senha'] ?? '');
 
-    // Validação básic
+    // Validação básica
     if (empty($username) || empty($senha)) {
         header('Location: index.php?erro=2');
         exit;

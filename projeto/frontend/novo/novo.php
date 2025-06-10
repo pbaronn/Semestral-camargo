@@ -28,7 +28,7 @@ if (!isset($_SESSION['logado'])) {
     </header>
     <div class="menu-container">
         <h1>Novo Cadastro</h1>
-        <form action="processa_novo.php" method="post" class="form-novo">
+        <form action="processa_cadastro.php" method="post" class="form-novo">
             <div class="form-group">
                 <label for="nome">Nome:</label>
                 <input type="text" name="nome" id="nome" required>
@@ -62,8 +62,8 @@ if (!isset($_SESSION['logado'])) {
                 <input type="email" name="email" id="email">
             </div>
             <div class="form-group">
-                <label for="DS_objetivo">Objetivo:</label>
-                <input type="text" name="DS_objetivo" id="DS_objetivo">
+                <label for="obs">Objetivo:</label>
+                <input type="text" name="obs" id="obs">
             </div>
 
             <!-- Doença preexistente -->
