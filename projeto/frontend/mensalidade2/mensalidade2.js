@@ -1,20 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Dados de exemplo do usuário
-    const dadosUsuario = {
-        nome: 'João Silva',
-        statusMensalidade: 'Em dia',
-        statusMatricula: 'Ativa',
-        diaVencimento: '10'
-    };
-
-    // Preenche as informações do usuário
-    document.querySelector('.form-group:nth-child(1) .info-text').textContent = dadosUsuario.nome;
-    document.querySelector('.form-group:nth-child(2) .info-text').textContent = dadosUsuario.statusMensalidade;
-    document.querySelector('.form-group:nth-child(3) .info-text').textContent = dadosUsuario.statusMatricula;
 
     // Configura o select de vencimento
     const selectVencimento = document.getElementById('diaVencimento');
-    selectVencimento.value = dadosUsuario.diaVencimento;
 
     // Configuração do botão de alterar vencimento
     const btnAlterarVencimento = document.querySelector('.btn-alterar-vencimento');
@@ -26,8 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         
         // Aqui você adicionaria a lógica para salvar no backend
-        dadosUsuario.diaVencimento = novoVencimento;
-        alert(`Dia de vencimento alterado para dia ${novoVencimento}`);
+        // alert(`Dia de vencimento alterado para dia ${novoVencimento}`);
     });
 
     // Configuração dos botões

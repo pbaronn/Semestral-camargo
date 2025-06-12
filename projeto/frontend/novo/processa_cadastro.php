@@ -39,12 +39,11 @@ if ($conn->connect_error) {
     die("Conexão falhou: " . $conn->connect_error);
 }
 
-// Definindo um valor fixo para 'cduser' (ajustar conforme necessário)
-// $cduser = 1; // Ajuste aqui conforme o sistema real de login
-
 // Preparando o SQL para inserir os dados
 $sql = "INSERT INTO user_form (obs,SN_saude_preexistente, SN_lesao_cirurgia, SN_restricao_medica, SN_uso_medicacao, SN_alergia_medicamento, SN_episodios_exercicios, SN_autorizacao_medica_fisica, DS_saude_preexistente, DS_lesao_cirurgia, DS_restricao_medica, DS_uso_medicacao, DS_alergia_medicamento, DS_episodios_exercicios, DS_autorizacao_medica_fisica, nome, sobrenome, dt_nascimento, cpf, telefone, telefone2, endereco, email)
 VALUES ('$obs','$SN_saude_preexistente', '$SN_lesao_cirurgia', '$SN_restricao_medica', '$SN_uso_medicacao', '$SN_alergia_medicamento', '$SN_episodios_exercicios', '$SN_autorizacao_medica_fisica', '$DS_saude_preexistente', '$DS_lesao_cirurgia', '$DS_restricao_medica', '$DS_uso_medicacao', '$DS_alergia_medicamento', '$DS_episodios_exercicios', '$DS_autorizacao_medica_fisica', '$nome', '$sobrenome', '$dt_nascimento', '$cpf', '$telefone', '$telefone2', '$endereco', '$email')";
+
+echo "<script>console.log('Debug Objects: " . $sql . "' );</script>";
 
 // Executando a consulta
 if ($conn->query($sql) === TRUE) {

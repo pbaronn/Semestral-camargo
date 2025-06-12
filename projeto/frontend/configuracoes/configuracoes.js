@@ -6,17 +6,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const btnCancelar = document.getElementById('btnCancelar');
     const btnVoltar = document.getElementById('btnVoltar');
 
-    // Dados de exemplo do usuário
-    const dadosUsuario = {
-        nome: 'João Silva',
-        email: 'joao.silva@email.com',
-        usuario: '@Fulanrr23'
-    };
-
-    // Preenche os campos com os dados do usuário
-    document.getElementById('nome').value = dadosUsuario.nome;
-    document.getElementById('email').value = dadosUsuario.email;
-    document.getElementById('usuario').value = dadosUsuario.usuario;
 
     // Função para mostrar campos de senha
     btnMudarSenha.addEventListener('click', () => {
