@@ -47,8 +47,8 @@ $row = $result->fetch_assoc();
             </div>
             <nav class="main-nav">
                 <a href="../menu/menu.php" class="nav-item" id="inicio"><img src="img/casa.png" alt="Início"> Início</a>
-                <a href="#" class="nav-item" id="config"><img src="img/eng.png" alt="Configurações"> Configurações</a>
-                <a href="#" class="nav-item" id="sair"><img src="img/sair.png" alt="Sair"> Sair</a>
+                <a href="../confuguracoes/confuguracoes.php" class="nav-item" id="config"><img src="img/eng.png" alt="Configurações"> Configurações</a>
+                <a href="../login/logout.php" class="nav-item"><img src="img/sair.png" alt="Sair"> Sair</a>
             </nav>
         </div>
     </header>

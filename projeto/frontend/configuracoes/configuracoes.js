@@ -1,67 +1,121 @@
-document.addEventListener('DOMContentLoaded', () => {
-    // Elementos do DOM
+document.addEventListener('DOMContentLoaded', function() {
     const btnMudarSenha = document.getElementById('btnMudarSenha');
     const camposSenha = document.getElementById('camposSenha');
     const btnSalvar = document.getElementById('btnSalvar');
     const btnCancelar = document.getElementById('btnCancelar');
     const btnVoltar = document.getElementById('btnVoltar');
 
+    const senhaAtualInput = document.getElementById('senhaAtual');
+    const novaSenhaInput = document.getElementById('novaSenha');
+    const confirmarSenhaInput = document.getElementById('confirmarSenha');
 
-    // Função para mostrar campos de senha
-    btnMudarSenha.addEventListener('click', () => {
-        camposSenha.style.display = 'block';
-        btnMudarSenha.style.display = 'none';
-    });
-
-    // Função para esconder campos de senha
-    function esconderCamposSenha() {
-        camposSenha.style.display = 'none';
-        btnMudarSenha.style.display = 'block';
-        // Limpa os campos
-        document.getElementById('senhaAtual').value = '';
-        document.getElementById('novaSenha').value = '';
-        document.getElementById('confirmarSenha').value = '';
+    // Cria um elemento para exibir mensagens (se ainda não existir no HTML)
+    let messageDiv = document.getElementById('passwordMessage');
+    if (!messageDiv) {
+        messageDiv = document.createElement('div');
+        messageDiv.id = 'passwordMessage';
+        messageDiv.style.marginTop = '15px';
+        messageDiv.style.padding = '10px';
+        messageDiv.style.borderRadius = '5px';
+        messageDiv.style.textAlign = 'center';
+        messageDiv.style.display = 'none'; // Inicialmente oculto
+        // Insere a div de mensagem após a seção de senha
+        const senhaSection = document.querySelector('.senha-section');
+        if (senhaSection) {
+            senhaSection.parentNode.insertBefore(messageDiv, senhaSection.nextSibling);
+        }
     }
 
-    // Handler do botão Salvar
-    btnSalvar.addEventListener('click', () => {
-        const senhaAtual = document.getElementById('senhaAtual').value;
-        const novaSenha = document.getElementById('novaSenha').value;
-        const confirmarSenha = document.getElementById('confirmarSenha').value;
 
-        if (!senhaAtual || !novaSenha || !confirmarSenha) {
-            alert('Por favor, preencha todos os campos de senha');
-            return;
-        }
+    // Event listener para o botão "Mudar senha"
+    btnMudarSenha.addEventListener('click', function() {
+        camposSenha.style.display = 'block'; // Mostra os campos de senha
+        btnMudarSenha.style.display = 'none'; // Esconde o botão "Mudar senha"
+        messageDiv.style.display = 'none'; // Esconde qualquer mensagem anterior
+        messageDiv.textContent = ''; // Limpa o texto da mensagem
+    });
 
+    // Event listener para o botão "Cancelar"
+    btnCancelar.addEventListener('click', function() {
+        camposSenha.style.display = 'none'; // Esconde os campos de senha
+        btnMudarSenha.style.display = 'block'; // Mostra o botão "Mudar senha" novamente
+        clearPasswordFields(); // Limpa os campos
+        messageDiv.style.display = 'none'; // Esconde qualquer mensagem anterior
+        messageDiv.textContent = '';
+    });
+
+    // Event listener para o botão "Salvar"
+    btnSalvar.addEventListener('click', function() {
+        const senhaAtual = senhaAtualInput.value;
+        const novaSenha = novaSenhaInput.value;
+        const confirmarSenha = confirmarSenhaInput.value;
+
+        // Validação client-side (básica, a validação principal é no servidor)
         if (novaSenha !== confirmarSenha) {
-            alert('A nova senha e a confirmação não coincidem');
+            displayMessage('A nova senha e a confirmação não coincidem.', false);
+            return;
+        }
+        if (novaSenha.length < 6) { // Deve ser consistente com a validação do PHP
+            displayMessage('A nova senha deve ter no mínimo 6 caracteres.', false);
             return;
         }
 
-        // Aqui você adicionaria a lógica para salvar no backend
-        alert('Senha alterada com sucesso!');
-        esconderCamposSenha();
+        // Envia os dados para o script PHP usando Fetch API
+        fetch('processa_senha.php', {
+            method: 'POST', // Método HTTP POST
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded', // Tipo de conteúdo para dados de formulário
+            },
+            // Converte os dados do formulário para o formato URL-encoded
+            body: new URLSearchParams({
+                senhaAtual: senhaAtual,
+                novaSenha: novaSenha,
+                confirmarSenha: confirmarSenha
+            }).toString()
+        })
+        .then(response => response.json()) // Converte a resposta para JSON
+        .then(data => {
+            if (data.success) {
+                displayMessage(data.message, true); // Exibe mensagem de sucesso
+                camposSenha.style.display = 'none'; // Esconde os campos após sucesso
+                btnMudarSenha.style.display = 'block'; // Mostra o botão "Mudar senha" novamente
+                clearPasswordFields(); // Limpa os campos
+            } else {
+                displayMessage(data.message, false); // Exibe mensagem de erro
+            }
+        })
+        .catch(error => {
+            console.error('Erro na requisição:', error); // Loga erros no console
+            displayMessage('Ocorreu um erro ao tentar alterar a senha. Tente novamente.', false);
+        });
     });
 
-    // Handler do botão Cancelar
-    btnCancelar.addEventListener('click', esconderCamposSenha);
-
-    // Handler do botão Voltar
-    btnVoltar.addEventListener('click', () => {
-        window.location.href = '../menu/menu.php';
+    // Event listener para o botão "Voltar"
+    btnVoltar.addEventListener('click', function() {
+        window.history.back(); // Volta para a página anterior no histórico do navegador
     });
 
+    // Função para limpar os campos de senha
+    function clearPasswordFields() {
+        senhaAtualInput.value = '';
+        novaSenhaInput.value = '';
+        confirmarSenhaInput.value = '';
+    }
 
-    inicio.addEventListener('click', () => {
-        window.location.href = '../menu/menu.php';
-    });
-
-    config.addEventListener('click', () => {
-        window.location.href = '../configuracoes/configuracoes.php';
-    });
-
-    sair.addEventListener('click', () => {
-        window.location.href = '../login/login.php';
-    });
+    // Função para exibir mensagens ao usuário
+    function displayMessage(message, isSuccess) {
+        messageDiv.textContent = message;
+        messageDiv.style.display = 'block'; // Mostra a div de mensagem
+        if (isSuccess) {
+            // Estilos para mensagem de sucesso
+            messageDiv.style.backgroundColor = '#d4edda'; // Verde claro
+            messageDiv.style.color = '#155724'; // Texto verde escuro
+            messageDiv.style.borderColor = '#c3e6cb'; // Borda verde
+        } else {
+            // Estilos para mensagem de erro
+            messageDiv.style.backgroundColor = '#f8d7da'; // Vermelho claro
+            messageDiv.style.color = '#721c24'; // Texto vermelho escuro
+            messageDiv.style.borderColor = '#f5c6cb'; // Borda vermelha
+        }
+    }
 });

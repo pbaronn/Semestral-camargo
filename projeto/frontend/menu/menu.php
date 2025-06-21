@@ -115,8 +115,8 @@ if (!isset($_SESSION['logado'])) {
 
                         echo "<tr>";
                         echo "<td class='$classStatus'>" . htmlspecialchars($status) . "</td>";
-                        echo "<td>" . $nomeCompleto . "</td>";
-                        echo "<td><a href='../editar/editar.php?id=" . $row['cd_userform'] . "'><img src='img/editar.png' alt='Editar'></a></td>";
+                        echo "<td><a href='../visualizar/visualizar.php?id=" . $row['cd_userform'] . "'>" . $nomeCompleto . "</a></td>";
+                        echo "<td><a href='../editar/editar.php?id=" . $row['cd_userform'] . "'><img src='img/lapis.png' alt='Editar'></a></td>";
                         echo "</tr>";
                     }
                 } else {

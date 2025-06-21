@@ -74,5 +74,26 @@ if ($result && $result->num_rows > 0) {
             </table>
         </div>
     </div>
+
+    <script>
+function filtrarUsuarios() {
+    const input = document.getElementById('buscaNome');
+    const filtro = input.value.toLowerCase();
+    const tabela = document.getElementById('tabelaUsuarios');
+    const linhas = tabela.getElementsByTagName('tr');
+
+    for (let i = 1; i < linhas.length; i++) { // Começa do 1 pra pular o cabeçalho
+        const colunaNome = linhas[i].getElementsByTagName('td')[1];
+        if (colunaNome) {
+            const textoNome = colunaNome.textContent || colunaNome.innerText;
+            if (textoNome.toLowerCase().indexOf(filtro) > -1) {
+                linhas[i].style.display = '';
+            } else {
+                linhas[i].style.display = 'none';
+            }
+        }
+    }
+}
+</script>
 </body>
 </html>
